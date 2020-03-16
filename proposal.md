@@ -14,7 +14,7 @@ Next Chord is an iOS app intended for musicians to find the next suggested chord
 
 ## Challenges I Anticipate
 
-Finding a way to create the APP that is user friendly and attractive. Maybe understing how the chord wheel works to add custom chord progession. Adding sounds to the APP.
+Finding a way to create the APP that is user friendly and attractive. Maybe understing how the chord wheel works to add more custom chord progessions. Adding sounds to the APP. Resolving bugs will be definitely be a challenge.
 
 ## Skateboard
 
@@ -45,8 +45,6 @@ To make APP look professional
 
 Subject to change during the development of project. And open to suggestions.<br>
 ![](intensive.jpeg)
-
-**Insert wireframe pictures here**
 
 
 ## Evaluation
