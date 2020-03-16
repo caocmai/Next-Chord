@@ -1,7 +1,5 @@
 # Juniors Spring Intensive Deliverable Proposal
 
-## TODO: copy this file, fill it out, and push it up to your project's repo.
-
 Dates 3/16-3/25
 
 **My Name: Cao Mai**
@@ -18,23 +16,23 @@ Dates 3/16-3/25
 
 ## Description
 
-**Next Chord is an iOS app intended for musicians to find the next suggested chord(s) based on the parent chord. Suggested chords will be based on the chord wheel concept. **
+Next Chord is an iOS app intended for musicians to find the next suggested chord(s) based on the parent chord. Suggested chords will be based on the chord wheel concept.
 
 ## Challenges I Anticipate
 
-**Finding a way to implement it that is user friendly and attractive. Understanding proficiently how the chord wheel works**
+Finding a way to implement it that is user friendly and attractive. Understanding proficiently how the chord wheel works
 
 ## Skateboard
 
-**Creating a layout of the chords that's compatible across multiple devices**
+Creating a layout of the chords that's compatible across multiple devices
 
 **Start coding and finish “Skateboard” feature before beginning “Bike”.**
 
 ## Bike
-**Adding sounds or some other user feedback when a chord is tapped**
+Adding sounds or some other user feedback when a chord is tapped
 
 ## Car
-**Animation and making it look professional**
+Animation and making it look professional
 
 
 ## Personal Achievement Goals:
