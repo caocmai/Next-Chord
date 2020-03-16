@@ -3,10 +3,10 @@
 
 Dates 3/16-3/25
 
-**My Name: Cao Mai**
-**Project Name: Next Chord**
-**Is your project New or Old?: New**
-**Is your project Solo or Team?: Solo**
+**My Name: Cao Mai**<br>
+**Project Name: Next Chord**<br>
+**Is your project New or Old?: New**<br>
+**Is your project Solo or Team?: Solo**><br>
 
 ## Description
 
