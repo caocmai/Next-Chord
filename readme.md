@@ -1,18 +1,12 @@
 # Juniors Spring Intensive Deliverable Proposal
+# Next Chord
 
 Dates 3/16-3/25
 
 **My Name: Cao Mai**
-
-
 **Project Name: Next Chord**
-
-
 **Is your project New or Old?: New**
-
-
 **Is your project Solo or Team?: Solo**
-
 
 ## Description
 
@@ -20,19 +14,17 @@ Next Chord is an iOS app intended for musicians to find the next suggested chord
 
 ## Challenges I Anticipate
 
-Finding a way to implement it that is user friendly and attractive. Understanding proficiently how the chord wheel works
+Finding a way to create the APP that is user friendly and attractive. Understanding proficiently how the chord wheel works. Adding sounds to the APP.
 
 ## Skateboard
 
-Creating a layout of the chords that's compatible across multiple devices
-
-**Start coding and finish “Skateboard” feature before beginning “Bike”.**
+Creating a layout of the chords that's compatible across multiple devices.
 
 ## Bike
-Adding sounds or some other user feedback when a chord is tapped
+Adding sounds or some other user feedback when a chord is tapped.
 
 ## Car
-Animation and making it look professional
+Animation and making it look professional.
 
 
 ## Personal Achievement Goals:
@@ -42,15 +34,16 @@ Animation and making it look professional
 ### Teammate 1
 
 1. Goal 1:
-TO implement the layout of the project to work with all devices
+To implement the layout of the project to work with all devices
 1. Goal 2:
-TO add sounds or other form of user feedback once a chord is selected
+To add sounds or other form of user feedback once a chord is selected
 1. Goal 3:
-TO make APP look professional
+To make APP look professional
 
 
 ## Wireframes
 
+Subject to change during the development of project. And open to suggestions.
 **Insert wireframe pictures here**
 
 
@@ -81,4 +74,3 @@ TO make APP look professional
 **Make School Advisor Name**
 > TBD
 
-# Next Chord
