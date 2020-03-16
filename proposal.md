@@ -10,11 +10,11 @@ Dates 3/16-3/25
 
 ## Description
 
-Next Chord is an iOS app intended for musicians to find the next suggested chord(s) based on the parent chord. Suggested chords will be based on the chord wheel concept.
+Next Chord is an iOS app intended for musicians to find the next suggested chord based on the parent chord. Suggested chords will be based on common chord progessions used in music.
 
 ## Challenges I Anticipate
 
-Finding a way to create the APP that is user friendly and attractive. Understanding proficiently how the chord wheel works. Adding sounds to the APP.
+Finding a way to create the APP that is user friendly and attractive. Maybe understing how the chord wheel works to add custom chord progession. Adding sounds to the APP.
 
 ## Skateboard
 
