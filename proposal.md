@@ -6,7 +6,7 @@ Dates 3/16-3/25
 **My Name: Cao Mai**<br>
 **Project Name: Next Chord**<br>
 **Is your project New or Old?: New**<br>
-**Is your project Solo or Team?: Solo**><br>
+**Is your project Solo or Team?: Solo**<br>
 
 ## Description
 
@@ -24,7 +24,7 @@ Creating a layout of the chords that's compatible across multiple devices.
 Adding sounds or some other user feedback when a chord is tapped.
 
 ## Car
-Animation and making it look professional.
+Animation and making it look professional. Adding a feature where 4 chords are automatically played in a specified tempo.
 
 
 ## Personal Achievement Goals:
@@ -43,7 +43,9 @@ To make APP look professional
 
 ## Wireframes
 
-Subject to change during the development of project. And open to suggestions.
+Subject to change during the development of project. And open to suggestions.<br>
+![](intensive.jpeg)
+
 **Insert wireframe pictures here**
 
 
