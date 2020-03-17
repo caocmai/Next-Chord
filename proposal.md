@@ -16,16 +16,15 @@ Next Chord is an iOS app intended for musicians to find the next suggested chord
 
 Finding a way to create the APP that is user friendly and attractive. Maybe understing how the chord wheel works to add more custom chord progessions. Adding sounds to the APP. Resolving bugs will definitely be a challenge.
 
-## Skateboard
+## Project "Skateboard" Ideation
 
 Creating a layout of the chords that's compatible across multiple devices.
 
-## Bike
+## Project "Bike" Ideation
 Adding sounds or some other user feedback when a chord is tapped.
 
-## Car
+## Project "Car" Ideation
 Animation and making it look professional. Adding a feature where 4 chords are automatically played in a specified tempo.
-
 
 ## Personal Achievement Goals:
 
@@ -63,14 +62,14 @@ Subject to change during the development of project. And open to suggestions.<br
 
 
 ## Approval Checklist
-- [ ] If I have a team project, I wrote this proposal to represent my work and only my work
-- [ ] I have completed all the necessary parts of this proposal
-- [ ] I linked my proposal in the Spring Intensive Tracker
+- [x] If I have a team project, I wrote this proposal to represent my work and only my work
+- [x] I have completed all the necessary parts of this proposal
+- [x] I linked my proposal in the Spring Intensive Tracker
 
 ### Sign off
 
 **Student Name:**               
-> Name / Date
+> Cao Mai / March 16 2020
 **Make School Advisor Name**
-> TBD
+> Adriana Gonzalez
 
