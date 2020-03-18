@@ -18,6 +18,19 @@ class NewTableViewCell: UITableViewCell {
     
     @IBOutlet weak var chordLabel2: UILabel!
     
+    @IBOutlet weak var chordLabel3: UILabel!
+    
+    @IBOutlet weak var chordLabel4: UILabel!
+    
+    @IBOutlet weak var chordButtonLabel1: UIButton!
+    
+    @IBOutlet weak var chordButtonLabel2: UIButton!
+    
+    @IBOutlet weak var chordButtonLabel3: UIButton!
+    
+    @IBOutlet weak var chordButtonLabel4: UIButton!
+    
+    
     var delegate: TableViewSound?
     var index: IndexPath?
     
@@ -33,8 +46,17 @@ class NewTableViewCell: UITableViewCell {
     }
     
     func setChord(with model: MajorKeys) {
-        labelName.text = model.chord1
-        chordLabel2.text = model.chord2
+        chordButtonLabel1.setTitle(model.chord1, for: .normal)
+        chordButtonLabel2.setTitle(model.chord2, for: .normal)
+        chordButtonLabel3.setTitle(model.chord3, for: .normal)
+        chordButtonLabel4.setTitle(model.chord4, for: .normal)
+    }
+    
+    func setLabels(with model: SetLabel) {
+        labelName.text = model.firstLabel
+        chordLabel2.text = model.secondLabel
+        chordLabel3.text = model.thirdLabel
+        chordLabel4.text = model.fourthLabel        
     }
 
     @IBAction func chordTapped(_ sender: UIButton) {
@@ -42,3 +64,4 @@ class NewTableViewCell: UITableViewCell {
     }
     
 }
+

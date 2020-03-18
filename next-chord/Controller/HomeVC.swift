@@ -19,6 +19,13 @@ class HomeVC: UIViewController {
     // Could do a struct here for major and for minor
     let chordsCMajor : [String:String] = ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bo"]
     
+    
+    let cMajor = MajorKeys(allChords: ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bo"])
+
+    
+    let cSharpMajor = MajorKeys(allChords: ["I":"C#", "ii":"D#m", "iii":"E#m", "IV":"F#", "V":"G#", "vi":"A#m", "viio":"B#o"])
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
@@ -51,97 +58,22 @@ class HomeVC: UIViewController {
     
     @IBAction func toTableTapped(_ sender: UIButton) {
         
+        print(sender.currentTitle!)
+        
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "tableScreen")
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "tableScreen") as! TableVC
         
-        self.view.window!.rootViewController = newViewController
+        if sender.currentTitle! == "ToTable" {
+            newViewController.theKey = cMajor
+            self.view.window!.rootViewController = newViewController
+            
+
+        } else {
+            print("nothing here")
+        }
+        
+//        self.view.window!.rootViewController = newViewController
 
     }
     
 }
-
-
-struct MajorKeys {
-    
-    //    var I : String
-    //    var ii : String
-    //    var iii : String
-    //    var IV : String
-    //    var V : String
-    //    var vi : String
-    //    var viio : String
-    
-    var chord1 : String = ""
-    var chord2 : String = ""
-    var chord3 : String = ""
-    
-    var allChords = [String:String]()
-    
-    mutating func getProgessiveChords2(input1: String?, input2: String?, input3: String?=nil) {
-        
-        if let a = input1 {
-            self.chord1 = allChords[a]!
-        }else {}
-        if let b = input2 {
-            self.chord2 = allChords[b]!
-        }else {}
-        if let c = input3 {
-            self.chord3 = allChords[c]!
-        } else {}
-    }
-    
-    
-    func getProgessiveChords (input1: String?, input2: String?, input3: String?=nil, input4: String?=nil) -> [String] {
-        
-        var array : [String] = []
-        
-        if let a = input1 {
-            array.append(allChords[a]!)
-        }
-        
-        if let b = input2 {
-            array.append(allChords[b]!)
-        }else {
-        }
-        
-        if let c = input3 {
-            array.append(allChords[c]!)
-        }else {
-        }
-        
-        if let d = input4 {
-            array.append(allChords[d]!)
-        }else {
-        }
-        
-        return array
-        
-    }
-    
-}
-
-struct MinorKeys {
-    
-}
-
-//let e = MajorKeys(I: "E", ii: "F#m", iii: "G#m", IV: "A", V: "B", vi: "C#m", viio: "D#o")
-
-
-//var e = MajorKeys(allChords: ["I":"E", "ii": "F#m", "iii": "G#m", "IV": "A", "V": "B", "vi": "C#m", "viio": "D#o"])
-//
-//e.getProgessiveChords2(input1: "I", input2: "ii")
-//print(e.chord1)
-//print(e.chord2)
-//
-//let newArray = [["V", "ii"], ["ii", "V"]]
-//var obj = [MajorKeys]()
-//for i in 0..<newArray.count {
-//
-//    var new = MajorKeys(allChords: ["I":"E", "ii": "F#m", "iii": "G#m", "IV": "A", "V": "B", "vi": "C#m", "viio": "D#o"])
-//    new.getProgessiveChords2(input1: newArray[0][i], input2: newArray[1][i])
-//    obj.append(new)
-//
-//
-//}
-//
-//print(obj[0])
