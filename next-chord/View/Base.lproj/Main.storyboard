@@ -53,90 +53,115 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="214" id="Wb1-fi-RxG" customClass="NewTableViewCell" customModule="next_chord" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="214"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="279" id="Wb1-fi-RxG" customClass="NewTableViewCell" customModule="next_chord" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="279"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wb1-fi-RxG" id="Gev-gp-Zb9">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ap4-4n-EIE">
-                                                    <rect key="frame" x="10" y="30" width="355" height="174"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xAp-6D-9sE">
+                                                    <rect key="frame" x="15" y="69" width="335" height="42"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3fp-wg-8dU">
-                                                            <rect key="frame" x="0.0" y="0.0" width="183" height="20.5"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87f-Ox-rxr">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9VK-OJ-v2j">
-                                                                    <rect key="frame" x="47" y="0.0" width="42" height="20.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gva-HT-wM6">
-                                                                    <rect key="frame" x="94" y="0.0" width="42" height="20.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skT-qu-gJk">
-                                                                    <rect key="frame" x="141" y="0.0" width="42" height="20.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xAp-6D-9sE">
-                                                            <rect key="frame" x="0.0" y="30.5" width="336" height="143.5"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmm-OC-hze">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="143.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                                    <state key="normal" title="Button"/>
-                                                                    <connections>
-                                                                        <action selector="chordTapped:" destination="Wb1-fi-RxG" eventType="touchUpInside" id="fdC-f7-pE0"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxQ-wV-Rof">
-                                                                    <rect key="frame" x="88" y="0.0" width="72" height="143.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                                    <state key="normal" title="Button"/>
-                                                                    <connections>
-                                                                        <action selector="chordTapped:" destination="Wb1-fi-RxG" eventType="touchUpInside" id="hem-B0-Gj1"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htP-da-D4T">
-                                                                    <rect key="frame" x="176" y="0.0" width="72" height="143.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                                    <state key="normal" title="Button"/>
-                                                                    <connections>
-                                                                        <action selector="chordTapped:" destination="Wb1-fi-RxG" eventType="touchUpInside" id="aTA-rL-Swr"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucY-tl-7rB">
-                                                                    <rect key="frame" x="264" y="0.0" width="72" height="143.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                                    <state key="normal" title="Button"/>
-                                                                    <connections>
-                                                                        <action selector="chordTapped:" destination="Wb1-fi-RxG" eventType="touchUpInside" id="CoA-Xf-b8t"/>
-                                                                    </connections>
-                                                                </button>
-                                                            </subviews>
-                                                        </stackView>
+                                                        <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmm-OC-hze">
+                                                            <rect key="frame" x="0.0" y="0.0" width="54" height="42"/>
+                                                            <color key="backgroundColor" red="0.94117647058823528" green="0.40784313725490196" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <state key="normal" title="Button">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="chordTapped:" destination="Wb1-fi-RxG" eventType="touchUpInside" id="fdC-f7-pE0"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxQ-wV-Rof">
+                                                            <rect key="frame" x="70" y="0.0" width="54.5" height="42"/>
+                                                            <color key="backgroundColor" red="0.98039215686274506" green="0.70980392156862748" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <state key="normal" title="Button">
+                                                                <color key="titleColor" white="0.35160709189497713" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="chordTapped:" destination="Wb1-fi-RxG" eventType="touchUpInside" id="hem-B0-Gj1"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htP-da-D4T">
+                                                            <rect key="frame" x="140.5" y="0.0" width="54" height="42"/>
+                                                            <color key="backgroundColor" red="0.92941176470588238" green="0.96862745098039216" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <state key="normal" title="Button">
+                                                                <color key="titleColor" white="0.35160709189497713" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="chordTapped:" destination="Wb1-fi-RxG" eventType="touchUpInside" id="aTA-rL-Swr"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucY-tl-7rB">
+                                                            <rect key="frame" x="210.5" y="0.0" width="54.5" height="42"/>
+                                                            <color key="backgroundColor" red="0.50196078431372548" green="0.83921568627450982" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <state key="normal" title="Button">
+                                                                <color key="titleColor" white="0.35160709189497713" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="chordTapped:" destination="Wb1-fi-RxG" eventType="touchUpInside" id="CoA-Xf-b8t"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4k-gu-CsP">
+                                                            <rect key="frame" x="281" y="0.0" width="54" height="42"/>
+                                                            <color key="backgroundColor" white="0.6215396689164383" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <state key="normal" title="Button">
+                                                                <color key="titleColor" white="0.35160709189497713" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="chordTapped:" destination="Wb1-fi-RxG" eventType="touchUpInside" id="KGS-hC-N0h"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3fp-wg-8dU">
+                                                    <rect key="frame" x="15" y="15" width="260" height="24"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87f-Ox-rxr">
+                                                            <rect key="frame" x="0.0" y="0.0" width="48" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9VK-OJ-v2j">
+                                                            <rect key="frame" x="53" y="0.0" width="48" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gva-HT-wM6">
+                                                            <rect key="frame" x="106" y="0.0" width="48" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skT-qu-gJk">
+                                                            <rect key="frame" x="159" y="0.0" width="48" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPz-Ht-DzO">
+                                                            <rect key="frame" x="212" y="0.0" width="48" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="ap4-4n-EIE" secondAttribute="bottom" constant="10" id="Mg7-la-faj"/>
-                                                <constraint firstItem="ap4-4n-EIE" firstAttribute="top" secondItem="Gev-gp-Zb9" secondAttribute="top" constant="30" id="VfW-ib-j9e"/>
-                                                <constraint firstItem="ap4-4n-EIE" firstAttribute="leading" secondItem="Gev-gp-Zb9" secondAttribute="leading" constant="10" id="jlG-8e-eYO"/>
-                                                <constraint firstAttribute="trailing" secondItem="ap4-4n-EIE" secondAttribute="trailing" constant="10" id="sPS-sV-Qnm"/>
+                                                <constraint firstItem="xAp-6D-9sE" firstAttribute="top" secondItem="3fp-wg-8dU" secondAttribute="bottom" constant="30" id="1oN-jy-oi6"/>
+                                                <constraint firstItem="3fp-wg-8dU" firstAttribute="leading" secondItem="Gev-gp-Zb9" secondAttribute="leading" constant="15" id="5Ap-Jv-AHG"/>
+                                                <constraint firstItem="xAp-6D-9sE" firstAttribute="leading" secondItem="Gev-gp-Zb9" secondAttribute="leading" constant="15" id="BVa-sL-tss"/>
+                                                <constraint firstItem="3fp-wg-8dU" firstAttribute="top" secondItem="Gev-gp-Zb9" secondAttribute="top" constant="15" id="YJL-Aq-BAr"/>
+                                                <constraint firstAttribute="trailing" secondItem="xAp-6D-9sE" secondAttribute="trailing" constant="25" id="stz-54-Oqe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -144,9 +169,11 @@
                                             <outlet property="chordButtonLabel2" destination="NxQ-wV-Rof" id="Ohw-xH-ype"/>
                                             <outlet property="chordButtonLabel3" destination="htP-da-D4T" id="E7V-5Q-jnY"/>
                                             <outlet property="chordButtonLabel4" destination="ucY-tl-7rB" id="5at-d0-Ly6"/>
+                                            <outlet property="chordButtonLabel5" destination="M4k-gu-CsP" id="dPd-zW-9AG"/>
                                             <outlet property="chordLabel2" destination="9VK-OJ-v2j" id="U00-Zn-AkL"/>
                                             <outlet property="chordLabel3" destination="gva-HT-wM6" id="K0B-J6-Ken"/>
                                             <outlet property="chordLabel4" destination="skT-qu-gJk" id="2KT-lK-wWf"/>
+                                            <outlet property="chordLabel5" destination="cPz-Ht-DzO" id="k7E-xQ-qxF"/>
                                             <outlet property="labelName" destination="87f-Ox-rxr" id="h2m-Ub-XNv"/>
                                         </connections>
                                     </tableViewCell>

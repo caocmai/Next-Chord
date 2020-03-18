@@ -5,10 +5,12 @@
 //  Created by Cao Mai on 3/17/20.
 //  Copyright © 2020 Make School. All rights reserved.
 //
-
+import AVFoundation
 import UIKit
 
 class TableVC: UIViewController {
+    
+    var player : AVAudioPlayer?
     
     let sampleData : [String] = ["JOne", "Bob", "Jone", "Lisa"]
     
@@ -22,9 +24,9 @@ class TableVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getChords()
         newTableView.delegate = self
         newTableView.dataSource = self
+        getChords()
         // Do any additional setup after loading the view.
     }
     
@@ -45,19 +47,57 @@ class TableVC: UIViewController {
     //    }
     
     func getChords() {
-        let newArray = [["I", "IV", "V", "I"], ["I", "vi", "IV", "V"]]
-        for i in 0..<newArray.count {
+        
+        let threeChords = [["I", "IV", "V", ""],
+                           ["ii", "V", "I", ""],
+        ]
+
+        for i in 0..<threeChords.count {
+
+            let labelOne = SetLabel(firstLabel: threeChords[i][0], secondLabel: threeChords[i][1], thirdLabel: threeChords[i][2])
+            allLabels.append(labelOne)
+
+            var new = theKey!
+            new.getProgessiveChords(input1: threeChords[i][0], input2: threeChords[i][1], input3: threeChords[i][2])
+            progessiveChords.append(new)
+
+        }
+        
+        let fourChords = [["I", "vi", "IV", "V"],
+                        ["I", "vi", "ii", "V"],
+                        ["I", "V", "vi", "IV"],
+                        ["I", "IV", "vi", "V"],
+                        ["I", "iii", "IV", "V"],
+                        ["I", "IV", "I", "V"],
+                        ["I", "IV", "ii", "V"],
+        ]
+
+        for i in 0..<fourChords.count {
+
+            let labelOne = SetLabel(firstLabel: fourChords[i][0], secondLabel: fourChords[i][1], thirdLabel: fourChords[i][2], fourthLabel: fourChords[i][3])
+            allLabels.append(labelOne)
+
+            var new = theKey!
+            new.getProgessiveChords(input1: fourChords[i][0], input2: fourChords[i][1], input3: fourChords[i][2], input4: fourChords[i][3])
+            progessiveChords.append(new)
+
+        }
+        
+        let fiveChords = [["I", "V", "vi", "iii", "IV"],
+                          ["IV", "ii", "I", "V", "I"],
+        ]
+        
+        for i in 0..<fiveChords.count {
             
-            let labelOne = SetLabel(firstLabel: newArray[i][0], secondLabel: newArray[i][1], thirdLabel: newArray[i][2], fourthLabel: newArray[i][3])
+            let labelOne = SetLabel(firstLabel: fiveChords[i][0], secondLabel: fiveChords[i][1], thirdLabel: fiveChords[i][2], fourthLabel: fiveChords[i][3], fithLabel: fiveChords[i][4])
             allLabels.append(labelOne)
             
             var new = theKey!
-            new.getProgessiveChords(input1: newArray[i][0], input2: newArray[i][1], input3: newArray[i][2], input4: newArray[i][3])
+            new.getProgessiveChords(input1: fiveChords[i][0], input2: fiveChords[i][1], input3: fiveChords[i][2], input4: fiveChords[i][3], input5: fiveChords[i][4])
             progessiveChords.append(new)
             
         }
         
-        print(progessiveChords)
     }
     
     
@@ -83,24 +123,31 @@ extension TableVC: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? NewTableViewCell
         //        cell?.textLabel?.text = "\(indexPath.row) \(balloonArray[indexPath.row])"
         //        cell?.labelName.text = sampleData[indexPath.row]
-        cell?.delegate = self
-        cell?.index = indexPath
-                cell?.setChord(with: progessiveChords[indexPath.row])
+        cell?.cellDelegate = self
+//        cell?.index = indexPath
         cell?.setLabels(with: allLabels[indexPath.row])
+        cell?.setChord(with: progessiveChords[indexPath.row])
         return cell!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 145
     }
+    
     
     
 }
 
 extension TableVC: TableViewSound {
     func onTap(playChord: String) {
-        print(" is Clicked")
-        print(playChord)
+        print("\(playChord) is Clicked")
+        playSound(soundName: playChord)
+    }
+    
+    func playSound(soundName: String) {
+        let url = Bundle.main.url(forResource: soundName, withExtension: "wav")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player?.play()
     }
     
     
