@@ -16,20 +16,53 @@ class HomeVC: UIViewController {
         
     ]
     
-    // Could do a struct here for major and for minor
-    let chordsCMajor : [String:String] = ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bo"]
+    let chordsCMajor : [String:String] = ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bdim"]
     
     
-    let cMajor = MajorKeys(allChords: ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bo"])
+    let cMajor = KeySignature(allChords: ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bdim"])
 
     
-    let cSharpMajor = MajorKeys(allChords: ["I":"C#", "ii":"D#m", "iii":"E#m", "IV":"F#", "V":"G#", "vi":"A#m", "viio":"B#o"])
-
+    let cSharpMajor = KeySignature(allChords: ["I":"C#", "ii":"D#m", "iii":"E#m", "IV":"F#", "V":"G#", "vi":"A#m", "viio":"B#o"])
+    
+    let cMinor = KeySignature(allChords: ["i":"Cm", "iio":"Ddim", "III":"Eb", "iv":"Fm", "v":"Gm", "VI":"Ab", "VII":"Bb"])
+    
+    var allMajorKeys = [KeySignature]()
+    var allMinorKeys = [KeySignature]()
+    
+    @IBOutlet weak var majorChordCV: UICollectionView!
+    
+    @IBOutlet weak var minorChordCV: UICollectionView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
         // Do any additional setup after loading the view.
+        populateMajorKeyChords()
+        populateMinorKeyChords()
+    }
+    
+    func populateMajorKeyChords() {
+        
+        let cMajor = KeySignature(keySignatureName: "C", allChords: ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bdim"])
+
+        
+        let cSharpMajor = KeySignature(keySignatureName: "C#", allChords: ["I":"C#", "ii":"D#m", "iii":"E#m", "IV":"F#", "V":"G#", "vi":"A#m", "viio":"B#o"])
+            
+        
+        allMajorKeys.append(cMajor)
+        allMajorKeys.append(cSharpMajor)
+        
+        
+    }
+    
+    func populateMinorKeyChords() {
+        let cMinor = KeySignature(keySignatureName: "Cm", allChords: ["i":"Cm", "iio":"Ddim", "III":"Eb", "iv":"Fm", "v":"Gm", "VI":"Ab", "VII":"Bb"])
+        
+        let cMinor2 = KeySignature(keySignatureName: "Cm", allChords: ["i":"Cm", "iio":"Ddim", "III":"Eb", "iv":"Fm", "v":"Gm", "VI":"Ab", "VII":"Bb"])
+        
+        allMinorKeys.append(cMinor)
+        allMinorKeys.append(cMinor2)
     }
     
     @IBAction func nextVCTapped(_ sender: UIButton) {
@@ -64,16 +97,88 @@ class HomeVC: UIViewController {
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "tableScreen") as! TableVC
         
         if sender.currentTitle! == "ToTable" {
-            newViewController.theKey = cMajor
+            newViewController.minorKey = cMinor
             self.view.window!.rootViewController = newViewController
-            
-
         } else {
             print("nothing here")
         }
         
 //        self.view.window!.rootViewController = newViewController
+        
+    }
+    
+    @IBAction func selectButtonTapped(sender: UIButton) -> Void {
+        print("button title: ", sender.currentTitle!)
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "tableScreen") as! TableVC
+        
+        if sender.currentTitle! == "C" {
+            newViewController.theKey = cMajor
+            self.view.window!.rootViewController = newViewController
+        } else {
+            print("nothing here")
+        }
+        
+        
+    }
+    
+}
+
+extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == minorChordCV {
+            return allMinorKeys.count
+        } else {
+            return allMajorKeys.count
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView == minorChordCV {
+            
+            let cell1 = minorChordCV.dequeueReusableCell(withReuseIdentifier: "collectionViewCell2", for: indexPath) as! MinorChordCell
+            cell1.backgroundColor = .blue
+            cell1.layer.cornerRadius = 10
+            
+            cell1.minorChordButtonLabel.setTitle(allMinorKeys[indexPath.row].keySignatureName, for: .normal)
+            cell1.minorChordButtonLabel.addTarget(self, action: #selector(selectButtonTapped), for: .touchUpInside)
+            
+
+            return cell1
+        } else {
+            let cell = majorChordCV.dequeueReusableCell(withReuseIdentifier: "collectionViewCell1", for: indexPath) as! MajorChordCell
+            cell.backgroundColor = .yellow
+            cell.layer.cornerRadius = 10
+            
+            cell.majorChordButtonLabel.setTitle(allMajorKeys[indexPath.row].keySignatureName, for: .normal)
+            cell.majorChordButtonLabel.addTarget(self, action: #selector(selectButtonTapped), for: .touchUpInside)
+            
+            return cell
+        }
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 75, height: 75)
 
     }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout
+        collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
+    
     
 }

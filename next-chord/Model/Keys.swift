@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MajorKeys {
+struct KeySignature {
     
     //    var I : String
     //    var ii : String
@@ -17,7 +17,7 @@ struct MajorKeys {
     //    var V : String
     //    var vi : String
     //    var viio : String
-    
+    var keySignatureName : String?
     var chord1 : String?
     var chord2 : String?
     var chord3 : String?

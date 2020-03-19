@@ -17,6 +17,9 @@
 		2CC2C61924209C0F0096B0D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2C61824209C0F0096B0D7 /* Assets.xcassets */; };
 		2CC2C61C24209C0F0096B0D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2C61A24209C0F0096B0D7 /* LaunchScreen.storyboard */; };
 		2CC2C62424209DD40096B0D7 /* ChordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2C62324209DD40096B0D7 /* ChordVC.swift */; };
+		2CCF7A1C24232A9F00A999EC /* MajorChordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF7A1B24232A9F00A999EC /* MajorChordCell.swift */; };
+		2CCF7A1E24232AB200A999EC /* MinorChordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF7A1D24232AB200A999EC /* MinorChordCell.swift */; };
+		2CCF7A202423324800A999EC /* AllChordsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF7A1F2423324800A999EC /* AllChordsVC.swift */; };
 		2CDA2F872421D5CF00D24465 /* F.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CDA2F842421D5CF00D24465 /* F.wav */; };
 		2CDA2F882421D5CF00D24465 /* G.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CDA2F852421D5CF00D24465 /* G.wav */; };
 		2CDA2F892421D5CF00D24465 /* C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CDA2F862421D5CF00D24465 /* C.wav */; };
@@ -39,6 +42,9 @@
 		2CC2C61B24209C0F0096B0D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CC2C61D24209C0F0096B0D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CC2C62324209DD40096B0D7 /* ChordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordVC.swift; sourceTree = "<group>"; };
+		2CCF7A1B24232A9F00A999EC /* MajorChordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorChordCell.swift; sourceTree = "<group>"; };
+		2CCF7A1D24232AB200A999EC /* MinorChordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorChordCell.swift; sourceTree = "<group>"; };
+		2CCF7A1F2423324800A999EC /* AllChordsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChordsVC.swift; sourceTree = "<group>"; };
 		2CDA2F842421D5CF00D24465 /* F.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = F.wav; sourceTree = "<group>"; };
 		2CDA2F852421D5CF00D24465 /* G.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = G.wav; sourceTree = "<group>"; };
 		2CDA2F862421D5CF00D24465 /* C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = C.wav; sourceTree = "<group>"; };
@@ -64,6 +70,8 @@
 			children = (
 				2CC2C61524209C0E0096B0D7 /* Main.storyboard */,
 				2C9D3C6B242196F500ED613B /* NewTableViewCell.swift */,
+				2CCF7A1B24232A9F00A999EC /* MajorChordCell.swift */,
+				2CCF7A1D24232AB200A999EC /* MinorChordCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -114,6 +122,7 @@
 				2CC2C62324209DD40096B0D7 /* ChordVC.swift */,
 				2CC2C61324209C0E0096B0D7 /* HomeVC.swift */,
 				2C9D3C69242194F700ED613B /* TableVC.swift */,
+				2CCF7A1F2423324800A999EC /* AllChordsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -210,11 +219,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CCF7A1C24232A9F00A999EC /* MajorChordCell.swift in Sources */,
 				2C9D3C6C242196F500ED613B /* NewTableViewCell.swift in Sources */,
 				2CC2C61424209C0E0096B0D7 /* HomeVC.swift in Sources */,
 				2CC2C62424209DD40096B0D7 /* ChordVC.swift in Sources */,
 				2CC2C61024209C0E0096B0D7 /* AppDelegate.swift in Sources */,
+				2CCF7A1E24232AB200A999EC /* MinorChordCell.swift in Sources */,
 				2C9D3C6F2421A9B100ED613B /* Keys.swift in Sources */,
+				2CCF7A202423324800A999EC /* AllChordsVC.swift in Sources */,
 				2C9D3C6A242194F700ED613B /* TableVC.swift in Sources */,
 				2CC2C61224209C0E0096B0D7 /* SceneDelegate.swift in Sources */,
 			);

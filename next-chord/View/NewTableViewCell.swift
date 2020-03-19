@@ -54,7 +54,12 @@ class NewTableViewCell: UITableViewCell {
 //        //set cell to initial state here, reset or set values, etc.
 //    }
     
-    func setChord(with model: MajorKeys) {
+    func setChord(with model: KeySignature) {
+        chordButtonLabel1.layer.cornerRadius = 7
+        chordButtonLabel2.layer.cornerRadius = 7
+        chordButtonLabel3.layer.cornerRadius = 7
+        chordButtonLabel4.layer.cornerRadius = 7
+        chordButtonLabel5.layer.cornerRadius = 7
         chordButtonLabel1.setTitle(model.chord1, for: .normal)
         chordButtonLabel2.setTitle(model.chord2, for: .normal)
         chordButtonLabel3.setTitle(model.chord3, for: .normal)
