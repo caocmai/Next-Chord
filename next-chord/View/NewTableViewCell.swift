@@ -53,6 +53,7 @@ class NewTableViewCell: UITableViewCell {
 //
 //        //set cell to initial state here, reset or set values, etc.
 //    }
+   
     
     func setChord(with model: KeySignature) {
         chordButtonLabel1.layer.cornerRadius = 7
@@ -81,14 +82,6 @@ class NewTableViewCell: UITableViewCell {
             chordButtonLabel5.isHidden = true
         }
         
-//        if model.chord4 == nil {
-//            chordButtonLabel4.isHidden = true
-//        } else {
-//            chordButtonLabel4.setTitle(model.chord4, for: .normal)
-//
-//        }
-//        chordButtonLabel4.setTitle(model.chord4, for: .normal)
-
     }
     
     func setLabels(with model: SetLabel) {

@@ -19,13 +19,6 @@ class HomeVC: UIViewController {
     let chordsCMajor : [String:String] = ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bdim"]
     
     
-    let cMajor = KeySignature(allChords: ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bdim"])
-    
-    
-    let cSharpMajor = KeySignature(allChords: ["I":"C#", "ii":"D#m", "iii":"E#m", "IV":"F#", "V":"G#", "vi":"A#m", "viio":"B#o"])
-    
-    let cMinor = KeySignature(allChords: ["i":"Cm", "iio":"Ddim", "III":"Eb", "iv":"Fm", "v":"Gm", "VI":"Ab", "VII":"Bb"])
-    
     var allMajorKeys = [KeySignature]()
     var allMinorKeys = [KeySignature]()
     
@@ -51,21 +44,40 @@ class HomeVC: UIViewController {
         
         let cMajor = KeySignature(keySignatureName: "C", allChords: ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bdim"])
         
+        let cSharpMajor = KeySignature(keySignatureName: "C#", allChords: ["I":"C#", "ii":"D#m", "iii":"Fm", "IV":"F#", "V":"G#", "vi":"A#m", "viio":"B#dim"])
         
-        let cSharpMajor = KeySignature(keySignatureName: "C#", allChords: ["I":"C#", "ii":"D#m", "iii":"E#m", "IV":"F#", "V":"G#", "vi":"A#m", "viio":"B#o"])
+        let dFlatMajor = KeySignature(keySignatureName: "Db", allChords: ["I":"Db", "ii":"Ebm", "iii":"Fm", "IV":"Gb", "V":"Ab", "vi":"Bbm", "viio":"Cdim"])
+        
+        let dMajor = KeySignature(keySignatureName: "D", allChords: ["I":"D", "ii":"Em", "iii":"F#m", "IV":"G", "V":"A", "vi":"Bm", "viio":"C#dim"])
+        
+        let eFlatMajor = KeySignature(keySignatureName: "Eb", allChords: ["I":"Eb", "ii":"Fm", "iii":"Gm", "IV":"Ab", "V":"Bb", "vi":"Cm", "viio":"Ddim"])
+        
+        let eMajor = KeySignature(keySignatureName: "E", allChords: ["I":"E", "ii":"F#m", "iii":"G#m", "IV":"A", "V":"B", "vi":"C#m", "viio":"D#dim"])
+        
+        let fMajor = KeySignature(keySignatureName: "F", allChords: ["I":"F", "ii":"Gm", "iii":"Am", "IV":"Bb", "V":"C", "vi":"C#m", "viio":"D#dim"])
         
         
         allMajorKeys.append(cMajor)
         allMajorKeys.append(cSharpMajor)
-        
+        allMajorKeys.append(dFlatMajor)
+        allMajorKeys.append(dMajor)
+        allMajorKeys.append(eFlatMajor)
+        allMajorKeys.append(eMajor)
+        allMajorKeys.append(fMajor)
         
     }
     
     func populateMinorKeyChords() {
         let cMinor = KeySignature(keySignatureName: "Cm", allChords: ["i":"Cm", "iio":"Ddim", "III":"Eb", "iv":"Fm", "v":"Gm", "VI":"Ab", "VII":"Bb"])
         
+        let cSharpMinor = KeySignature(keySignatureName: "C#m", allChords: ["i":"C#m", "iio":"D#dim", "III":"E", "iv":"F#m", "v":"G#m", "VI":"A", "VII":"B"])
+        
+        let dMinor = KeySignature(keySignatureName: "Dm", allChords: ["i":"Dm", "iio":"Edim", "III":"F", "iv":"Gm", "v":"Am", "VI":"Bb", "VII":"C"])
+        
         
         allMinorKeys.append(cMinor)
+        allMinorKeys.append(cSharpMinor)
+        allMinorKeys.append(dMinor)
     }
     
     @IBAction func nextVCTapped(_ sender: UIButton) {
@@ -91,34 +103,10 @@ class HomeVC: UIViewController {
         }
     }
     
-    
-    @IBAction func toTableTapped(_ sender: UIButton) {
-        
-        print(sender.currentTitle!)
-        
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "tableScreen") as! TableVC
-        
-        if sender.currentTitle! == "ToTable" {
-            newViewController.minorKey = cMinor
-            self.view.window!.rootViewController = newViewController
-        } else {
-            print("nothing here")
-        }
-        
-        //        self.view.window!.rootViewController = newViewController
-        
-    }
-    
     @IBAction func selectButtonTapped(sender: UIButton) -> Void {
         print("button title: ", sender.currentTitle!)
         
-        
-        
-        
-        
         for majorkey in allMajorKeys {
-            print(majorkey.keySignatureName!)
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "tableScreen") as! TableVC
             if (sender.currentTitle! == majorkey.keySignatureName!) {
@@ -129,7 +117,6 @@ class HomeVC: UIViewController {
         }
         
         for minorkey in allMinorKeys {
-            print(minorkey.keySignatureName!)
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "tableScreen") as! TableVC
             
@@ -140,17 +127,6 @@ class HomeVC: UIViewController {
             
             
         }
-        
-        
-        
-        //        if sender.currentTitle! == "C" {
-        //            newViewController.theKey = cMajor
-        ////            self.view.window!.rootViewController = newViewController
-        //            self.navigationController?.pushViewController(newViewController, animated: true)
-        //        } else {
-        //            print("nothing here")
-        //        }
-        
         
     }
     
@@ -180,6 +156,9 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
             
             return cell1
         } else {
+            majorChordCV.layer.borderColor = UIColor(red:122/255, green:155/255, blue:227/255, alpha: 1).cgColor
+            majorChordCV.layer.borderWidth = 2.0
+            majorChordCV.layer.cornerRadius = 8
             let cell = majorChordCV.dequeueReusableCell(withReuseIdentifier: "collectionViewCell1", for: indexPath) as! MajorChordCell
             cell.backgroundColor = .yellow
             cell.layer.cornerRadius = 10
@@ -202,13 +181,19 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1.0
+        return 15.0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1.0
+        return 40.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
     }
     
     
