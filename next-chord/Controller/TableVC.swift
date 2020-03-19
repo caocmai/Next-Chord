@@ -29,10 +29,13 @@ class TableVC: UIViewController {
         newTableView.layer.cornerRadius = 7
         newTableView.delegate = self
         newTableView.dataSource = self
+
         if theKey != nil {
             getMajorChords()
+            navigationItem.title = (theKey?.keySignatureName!)! + " Major"
         } else {
             getMinorChords()
+            navigationItem.title = (minorKey?.keySignatureName!)! + " Minor"
         }
         // Do any additional setup after loading the view.
     }

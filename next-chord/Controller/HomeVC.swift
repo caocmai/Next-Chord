@@ -20,7 +20,7 @@ class HomeVC: UIViewController {
     
     
     let cMajor = KeySignature(allChords: ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bdim"])
-
+    
     
     let cSharpMajor = KeySignature(allChords: ["I":"C#", "ii":"D#m", "iii":"E#m", "IV":"F#", "V":"G#", "vi":"A#m", "viio":"B#o"])
     
@@ -38,17 +38,22 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.definesPresentationContext = true
+        
         populateMajorKeyChords()
         populateMinorKeyChords()
+        navigationItem.title = "Select a Key"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
     }
     
     func populateMajorKeyChords() {
         
         let cMajor = KeySignature(keySignatureName: "C", allChords: ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bdim"])
-
+        
         
         let cSharpMajor = KeySignature(keySignatureName: "C#", allChords: ["I":"C#", "ii":"D#m", "iii":"E#m", "IV":"F#", "V":"G#", "vi":"A#m", "viio":"B#o"])
-            
+        
         
         allMajorKeys.append(cMajor)
         allMajorKeys.append(cSharpMajor)
@@ -59,10 +64,8 @@ class HomeVC: UIViewController {
     func populateMinorKeyChords() {
         let cMinor = KeySignature(keySignatureName: "Cm", allChords: ["i":"Cm", "iio":"Ddim", "III":"Eb", "iv":"Fm", "v":"Gm", "VI":"Ab", "VII":"Bb"])
         
-        let cMinor2 = KeySignature(keySignatureName: "Cm", allChords: ["i":"Cm", "iio":"Ddim", "III":"Eb", "iv":"Fm", "v":"Gm", "VI":"Ab", "VII":"Bb"])
         
         allMinorKeys.append(cMinor)
-        allMinorKeys.append(cMinor2)
     }
     
     @IBAction func nextVCTapped(_ sender: UIButton) {
@@ -103,22 +106,50 @@ class HomeVC: UIViewController {
             print("nothing here")
         }
         
-//        self.view.window!.rootViewController = newViewController
+        //        self.view.window!.rootViewController = newViewController
         
     }
     
     @IBAction func selectButtonTapped(sender: UIButton) -> Void {
         print("button title: ", sender.currentTitle!)
         
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "tableScreen") as! TableVC
         
-        if sender.currentTitle! == "C" {
-            newViewController.theKey = cMajor
-            self.view.window!.rootViewController = newViewController
-        } else {
-            print("nothing here")
+        
+        
+        
+        for majorkey in allMajorKeys {
+            print(majorkey.keySignatureName!)
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "tableScreen") as! TableVC
+            if (sender.currentTitle! == majorkey.keySignatureName!) {
+                newViewController.theKey = majorkey
+                self.navigationController?.pushViewController(newViewController, animated: true)
+                return
+            }
         }
+        
+        for minorkey in allMinorKeys {
+            print(minorkey.keySignatureName!)
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "tableScreen") as! TableVC
+            
+            if (sender.currentTitle! == minorkey.keySignatureName!) {
+                newViewController.minorKey = minorkey
+                self.navigationController?.pushViewController(newViewController, animated: true)
+            }
+            
+            
+        }
+        
+        
+        
+        //        if sender.currentTitle! == "C" {
+        //            newViewController.theKey = cMajor
+        ////            self.view.window!.rootViewController = newViewController
+        //            self.navigationController?.pushViewController(newViewController, animated: true)
+        //        } else {
+        //            print("nothing here")
+        //        }
         
         
     }
@@ -146,7 +177,7 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
             cell1.minorChordButtonLabel.setTitle(allMinorKeys[indexPath.row].keySignatureName, for: .normal)
             cell1.minorChordButtonLabel.addTarget(self, action: #selector(selectButtonTapped), for: .touchUpInside)
             
-
+            
             return cell1
         } else {
             let cell = majorChordCV.dequeueReusableCell(withReuseIdentifier: "collectionViewCell1", for: indexPath) as! MajorChordCell
@@ -165,15 +196,15 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 75, height: 75)
-
+        
     }
-
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1.0
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {

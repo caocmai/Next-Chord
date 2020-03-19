@@ -12,6 +12,9 @@ class AllChordsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .orange
+        navigationItem.title = "Something herer"
+        navigationController?.navigationBar.prefersLargeTitles = true
 
         // Do any additional setup after loading the view.
     }
