@@ -14,7 +14,7 @@ protocol TableViewSound {
 
 class NewTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var chordLabel1: UILabel!
     
     @IBOutlet weak var chordLabel2: UILabel!
     
@@ -43,7 +43,7 @@ class NewTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -53,7 +53,6 @@ class NewTableViewCell: UITableViewCell {
 //
 //        //set cell to initial state here, reset or set values, etc.
 //    }
-   
     
     func setChord(with model: KeySignature) {
         chordButtonLabel1.layer.cornerRadius = 7
@@ -64,7 +63,6 @@ class NewTableViewCell: UITableViewCell {
         chordButtonLabel1.setTitle(model.chord1, for: .normal)
         chordButtonLabel2.setTitle(model.chord2, for: .normal)
         chordButtonLabel3.setTitle(model.chord3, for: .normal)
-        
         
 //        chordButtonLabel4.setTitle(model.chord4, for: .normal)
         
@@ -85,7 +83,7 @@ class NewTableViewCell: UITableViewCell {
     }
     
     func setLabels(with model: SetLabel) {
-        labelName.text = model.firstLabel
+        chordLabel1.text = model.firstLabel
         chordLabel2.text = model.secondLabel
         chordLabel3.text = model.thirdLabel
         chordLabel4.text = model.fourthLabel

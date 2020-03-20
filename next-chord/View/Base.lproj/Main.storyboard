@@ -100,9 +100,6 @@
                                         <state key="normal" title="Minor">
                                             <color key="titleColor" red="0.24165212563451777" green="0.24165212563451777" blue="0.24165212563451777" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
-                                        <connections>
-                                            <action selector="nextVCTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ea9-ev-cbk"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.9725843072" green="0.94372674440000004" blue="0.54073757190000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -346,11 +343,11 @@
                                             <outlet property="chordButtonLabel3" destination="htP-da-D4T" id="E7V-5Q-jnY"/>
                                             <outlet property="chordButtonLabel4" destination="ucY-tl-7rB" id="5at-d0-Ly6"/>
                                             <outlet property="chordButtonLabel5" destination="M4k-gu-CsP" id="dPd-zW-9AG"/>
+                                            <outlet property="chordLabel1" destination="87f-Ox-rxr" id="h2m-Ub-XNv"/>
                                             <outlet property="chordLabel2" destination="9VK-OJ-v2j" id="U00-Zn-AkL"/>
                                             <outlet property="chordLabel3" destination="gva-HT-wM6" id="K0B-J6-Ken"/>
                                             <outlet property="chordLabel4" destination="skT-qu-gJk" id="2KT-lK-wWf"/>
                                             <outlet property="chordLabel5" destination="cPz-Ht-DzO" id="k7E-xQ-qxF"/>
-                                            <outlet property="labelName" destination="87f-Ox-rxr" id="h2m-Ub-XNv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -384,6 +381,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wnb-Pf-NmP">
                                 <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="sectionIndexBackgroundColor" red="0.96464210748672485" green="0.96488112211227417" blue="0.95294088125228882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableCell" rowHeight="197" id="Oah-7H-ReV" customClass="AllChordTableCell" customModule="next_chord" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="197"/>
@@ -405,6 +403,7 @@
                                                 <constraint firstItem="slR-A3-YHK" firstAttribute="centerY" secondItem="Np8-Gh-eT9" secondAttribute="centerY" id="sBe-yV-ATG"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96464210748672485" green="0.96488112211227417" blue="0.95294088125228882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="allChordsLabel" destination="slR-A3-YHK" id="S92-xZ-u9A"/>
                                         </connections>
@@ -433,42 +432,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O0m-cE-HUl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2751.1999999999998" y="876.61169415292363"/>
-        </scene>
-        <!--ChordVC-->
-        <scene sceneID="a5K-qI-rhu">
-            <objects>
-                <viewController storyboardIdentifier="chordScreen" id="ub9-aU-D71" customClass="ChordVC" customModule="next_chord" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uva-nl-YRg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wUP-nP-I4Q">
-                                <rect key="frame" x="136" y="249" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bkz-xf-egm">
-                                <rect key="frame" x="136" y="358" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="chordButtonPressed:" destination="ub9-aU-D71" eventType="touchUpInside" id="WMC-ze-FKo"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="kth-Nq-pEq"/>
-                    </view>
-                    <connections>
-                        <outlet property="chordButtonLabel" destination="Bkz-xf-egm" id="rqc-7j-84r"/>
-                        <outlet property="chordLabel" destination="wUP-nP-I4Q" id="Rdw-Nz-D1S"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e0r-Mc-fgc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2752.8000000000002" y="133.5832083958021"/>
         </scene>
         <!--Home-->
         <scene sceneID="Vhf-Jz-iBB">
