@@ -156,9 +156,9 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
             
             return cell1
         } else {
-            majorChordCV.layer.borderColor = UIColor(red:122/255, green:155/255, blue:227/255, alpha: 1).cgColor
-            majorChordCV.layer.borderWidth = 2.0
-            majorChordCV.layer.cornerRadius = 8
+//            majorChordCV.layer.borderColor = UIColor(red:122/255, green:155/255, blue:227/255, alpha: 1).cgColor
+//            majorChordCV.layer.borderWidth = 2.0
+//            majorChordCV.layer.cornerRadius = 8
             let cell = majorChordCV.dequeueReusableCell(withReuseIdentifier: "collectionViewCell1", for: indexPath) as! MajorChordCell
             cell.backgroundColor = .yellow
             cell.layer.cornerRadius = 10

@@ -16,133 +16,175 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="7hg-Rq-dpV">
-                                <rect key="frame" x="10" y="54" width="355" height="554"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKc-gc-OUt" userLabel="MajorChordTitle">
+                                <rect key="frame" x="0.0" y="49" width="375" height="40"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Sb-Y0-bAx">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="141.5"/>
-                                        <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wc8-p1-BBc">
-                                                <rect key="frame" x="5" y="5" width="345" height="131.5"/>
-                                                <color key="backgroundColor" red="0.99971288439999995" green="0.98880344630000006" blue="0.95293730499999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="h6L-PU-yAP">
-                                                    <size key="itemSize" width="50" height="50"/>
-                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                </collectionViewFlowLayout>
-                                                <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell1" id="6eD-jC-bKi" customClass="MajorChordCell" customModule="next_chord" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Nz1-3u-Q2b">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRF-4j-ybW">
-                                                                    <rect key="frame" x="-22.5" y="-22.5" width="95" height="95"/>
-                                                                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="95" id="0px-a4-8EC"/>
-                                                                        <constraint firstAttribute="width" constant="95" id="J9I-s7-SDY"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                                                    <state key="normal" title="Button">
-                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    </state>
-                                                                </button>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="hRF-4j-ybW" firstAttribute="centerY" secondItem="Nz1-3u-Q2b" secondAttribute="centerY" id="229-zR-YXe"/>
-                                                                <constraint firstItem="hRF-4j-ybW" firstAttribute="centerX" secondItem="Nz1-3u-Q2b" secondAttribute="centerX" id="pg7-Nr-w4f"/>
-                                                            </constraints>
-                                                        </collectionViewCellContentView>
-                                                        <connections>
-                                                            <outlet property="majorChordButtonLabel" destination="hRF-4j-ybW" id="eQJ-iZ-azG"/>
-                                                        </connections>
-                                                    </collectionViewCell>
-                                                </cells>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="trd-TK-eOQ"/>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="qAe-Ct-Sch"/>
-                                                </connections>
-                                            </collectionView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="wc8-p1-BBc" secondAttribute="bottom" constant="5" id="BuH-Nt-Wdw"/>
-                                            <constraint firstItem="wc8-p1-BBc" firstAttribute="top" secondItem="3Sb-Y0-bAx" secondAttribute="top" constant="5" id="HQg-Y4-bfh"/>
-                                            <constraint firstAttribute="trailing" secondItem="wc8-p1-BBc" secondAttribute="trailing" constant="5" id="M08-Jh-Q92"/>
-                                            <constraint firstItem="wc8-p1-BBc" firstAttribute="leading" secondItem="3Sb-Y0-bAx" secondAttribute="leading" constant="5" id="o4p-at-5XU"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5t-45-otA">
-                                        <rect key="frame" x="0.0" y="206.5" width="355" height="141"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOZ-Nc-zeD">
-                                                <rect key="frame" x="75" y="49" width="89" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="chordCMajor"/>
-                                                <connections>
-                                                    <action selector="nextVCTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ea9-ev-cbk"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W78-YI-wBk">
-                                        <rect key="frame" x="0.0" y="412.5" width="355" height="141.5"/>
-                                        <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wKc-mb-4Uc">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.99971288442611694" green="0.9888034462928772" blue="0.95293730497360229" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qWp-cy-LjH">
-                                                    <size key="itemSize" width="50" height="50"/>
-                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                </collectionViewFlowLayout>
-                                                <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell2" id="Ui8-54-rqd" customClass="MinorChordCell" customModule="next_chord" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rAL-y7-6JT">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75r-J6-u3n">
-                                                                    <rect key="frame" x="-12.5" y="3" width="75" height="44"/>
-                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                                                    <state key="normal" title="Button"/>
-                                                                </button>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="75r-J6-u3n" firstAttribute="centerY" secondItem="rAL-y7-6JT" secondAttribute="centerY" id="6nI-GR-9aI"/>
-                                                                <constraint firstItem="75r-J6-u3n" firstAttribute="centerX" secondItem="rAL-y7-6JT" secondAttribute="centerX" id="q2r-dA-ZoJ"/>
-                                                            </constraints>
-                                                        </collectionViewCellContentView>
-                                                        <connections>
-                                                            <outlet property="minorChordButtonLabel" destination="75r-J6-u3n" id="1dA-iD-wpe"/>
-                                                        </connections>
-                                                    </collectionViewCell>
-                                                </cells>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="CYO-Wx-jkO"/>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="0y0-ZT-smx"/>
-                                                </connections>
-                                            </collectionView>
-                                        </subviews>
-                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Major Chords" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofK-Tk-6Hl">
+                                        <rect key="frame" x="115" y="5" width="145" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" red="0.26312658629441621" green="0.26312658629441621" blue="0.26312658629441621" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" red="0.9725843071937561" green="0.94372674437433668" blue="0.54073757189736804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ItY-cM-gPZ"/>
+                                    <constraint firstItem="ofK-Tk-6Hl" firstAttribute="centerX" secondItem="BKc-gc-OUt" secondAttribute="centerX" id="NtI-TG-EjA"/>
+                                    <constraint firstItem="ofK-Tk-6Hl" firstAttribute="centerY" secondItem="BKc-gc-OUt" secondAttribute="centerY" id="fWw-Xf-MoF"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Sb-Y0-bAx" userLabel="MajorChordsView">
+                                <rect key="frame" x="5" y="94" width="365" height="230"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wc8-p1-BBc">
+                                        <rect key="frame" x="5" y="5" width="355" height="220"/>
+                                        <color key="backgroundColor" red="0.99971288439999995" green="0.98880344630000006" blue="0.95293730499999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="h6L-PU-yAP">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell1" id="6eD-jC-bKi" customClass="MajorChordCell" customModule="next_chord" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Nz1-3u-Q2b">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRF-4j-ybW">
+                                                            <rect key="frame" x="-22.5" y="-22.5" width="95" height="95"/>
+                                                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="95" id="0px-a4-8EC"/>
+                                                                <constraint firstAttribute="width" constant="95" id="J9I-s7-SDY"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                            <state key="normal" title="Button">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="hRF-4j-ybW" firstAttribute="centerY" secondItem="Nz1-3u-Q2b" secondAttribute="centerY" id="229-zR-YXe"/>
+                                                        <constraint firstItem="hRF-4j-ybW" firstAttribute="centerX" secondItem="Nz1-3u-Q2b" secondAttribute="centerX" id="pg7-Nr-w4f"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <connections>
+                                                    <outlet property="majorChordButtonLabel" destination="hRF-4j-ybW" id="eQJ-iZ-azG"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="trd-TK-eOQ"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="qAe-Ct-Sch"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="wc8-p1-BBc" firstAttribute="leading" secondItem="3Sb-Y0-bAx" secondAttribute="leading" constant="5" id="1yh-lQ-tyn"/>
+                                    <constraint firstItem="wc8-p1-BBc" firstAttribute="top" secondItem="3Sb-Y0-bAx" secondAttribute="top" constant="5" id="LAc-fv-ytH"/>
+                                    <constraint firstAttribute="bottom" secondItem="wc8-p1-BBc" secondAttribute="bottom" constant="5" id="QJp-Cs-Br4"/>
+                                    <constraint firstAttribute="trailing" secondItem="wc8-p1-BBc" secondAttribute="trailing" constant="5" id="lwg-2o-DV0"/>
+                                    <constraint firstAttribute="height" constant="230" id="tRP-rq-VR0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5t-45-otA" userLabel="MinorChordTitle">
+                                <rect key="frame" x="0.0" y="354" width="375" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOZ-Nc-zeD">
+                                        <rect key="frame" x="114.5" y="-1" width="146" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Minor Chords">
+                                            <color key="titleColor" red="0.24165212563451777" green="0.24165212563451777" blue="0.24165212563451777" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nextVCTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ea9-ev-cbk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.54835146878831864" green="0.88248028156115921" blue="0.51668471266157889" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="XOZ-Nc-zeD" firstAttribute="centerY" secondItem="i5t-45-otA" secondAttribute="centerY" id="Nte-1Q-OlV"/>
+                                    <constraint firstItem="XOZ-Nc-zeD" firstAttribute="centerX" secondItem="i5t-45-otA" secondAttribute="centerX" id="uA8-Zx-JEC"/>
+                                    <constraint firstAttribute="height" constant="40" id="whl-fO-pMK"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W78-YI-wBk" userLabel="MinorChords">
+                                <rect key="frame" x="5" y="399" width="365" height="230"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wKc-mb-4Uc">
+                                        <rect key="frame" x="5" y="5" width="345" height="220"/>
+                                        <color key="backgroundColor" red="0.99971288442611694" green="0.9888034462928772" blue="0.95293730497360229" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qWp-cy-LjH">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell2" id="Ui8-54-rqd" customClass="MinorChordCell" customModule="next_chord" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rAL-y7-6JT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75r-J6-u3n">
+                                                            <rect key="frame" x="-22.5" y="-22.5" width="95" height="95"/>
+                                                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="95" id="5iL-qc-Iev"/>
+                                                                <constraint firstAttribute="height" constant="95" id="Fhp-Qt-Jhr"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                            <color key="tintColor" red="0.92941176469999998" green="0.87717839279999998" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <state key="normal" title="Button">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="75r-J6-u3n" firstAttribute="centerY" secondItem="rAL-y7-6JT" secondAttribute="centerY" id="6nI-GR-9aI"/>
+                                                        <constraint firstItem="75r-J6-u3n" firstAttribute="centerX" secondItem="rAL-y7-6JT" secondAttribute="centerX" id="q2r-dA-ZoJ"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <connections>
+                                                    <outlet property="minorChordButtonLabel" destination="75r-J6-u3n" id="1dA-iD-wpe"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="CYO-Wx-jkO"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="0y0-ZT-smx"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="5ij-HX-WMp"/>
+                                    <constraint firstItem="wKc-mb-4Uc" firstAttribute="top" secondItem="W78-YI-wBk" secondAttribute="top" constant="5" id="HnL-O7-4Tg"/>
+                                    <constraint firstAttribute="bottom" secondItem="wKc-mb-4Uc" secondAttribute="bottom" constant="5" id="LUx-9c-hum"/>
+                                    <constraint firstItem="wKc-mb-4Uc" firstAttribute="leading" secondItem="W78-YI-wBk" secondAttribute="leading" constant="5" id="ZWd-fz-TKR"/>
+                                    <constraint firstAttribute="trailing" secondItem="wKc-mb-4Uc" secondAttribute="trailing" constant="15" id="vPq-q7-sF0"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.98855567333092365" blue="0.95453300471910252" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7hg-Rq-dpV" secondAttribute="trailing" constant="10" id="3Fr-Nq-hJX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7hg-Rq-dpV" secondAttribute="bottom" constant="10" id="b4q-tD-3YE"/>
-                            <constraint firstItem="7hg-Rq-dpV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="snR-hF-UA8"/>
-                            <constraint firstItem="7hg-Rq-dpV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ure-ds-CPP"/>
+                            <constraint firstItem="i5t-45-otA" firstAttribute="top" secondItem="3Sb-Y0-bAx" secondAttribute="bottom" constant="30" id="BYz-zh-gHg"/>
+                            <constraint firstItem="W78-YI-wBk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="CT9-uB-HCp"/>
+                            <constraint firstItem="i5t-45-otA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fh9-LY-50e"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BKc-gc-OUt" secondAttribute="trailing" id="RyX-Ad-Dg5"/>
+                            <constraint firstItem="BKc-gc-OUt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SCC-cQ-JDX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W78-YI-wBk" secondAttribute="trailing" constant="5" id="SRP-Kz-rYV"/>
+                            <constraint firstItem="W78-YI-wBk" firstAttribute="top" secondItem="i5t-45-otA" secondAttribute="bottom" constant="5" id="W9W-mT-vjO"/>
+                            <constraint firstItem="3Sb-Y0-bAx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="bR4-GM-7bN"/>
+                            <constraint firstItem="3Sb-Y0-bAx" firstAttribute="top" secondItem="BKc-gc-OUt" secondAttribute="bottom" constant="5" id="dxn-c7-Q0z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i5t-45-otA" secondAttribute="trailing" id="lqU-OU-8S0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Sb-Y0-bAx" secondAttribute="trailing" constant="5" id="r6P-dS-R19"/>
+                            <constraint firstItem="BKc-gc-OUt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="yEw-lS-FCF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
