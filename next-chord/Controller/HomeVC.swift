@@ -74,10 +74,16 @@ class HomeVC: UIViewController {
         
         let dMinor = KeySignature(keySignatureName: "Dm", allChords: ["i":"Dm", "iio":"Edim", "III":"F", "iv":"Gm", "v":"Am", "VI":"Bb", "VII":"C"])
         
+        let dSharpMinor = KeySignature(keySignatureName: "D#m", allChords: ["i":"Dm", "iio":"E#dim", "III":"F#", "iv":"G#m", "v":"A#m", "VI":"B", "VII":"C#"])
+        
+        let eFlatMinor = KeySignature(keySignatureName: "Ebm", allChords: ["i":"Dm", "iio":"Fdim", "III":"Gb", "iv":"Abm", "v":"Bbm", "VI":"Cb", "VII":"Db"])
+        
         
         allMinorKeys.append(cMinor)
         allMinorKeys.append(cSharpMinor)
         allMinorKeys.append(dMinor)
+        allMinorKeys.append(dSharpMinor)
+        allMinorKeys.append(eFlatMinor)
     }
     
     @IBAction func nextVCTapped(_ sender: UIButton) {
