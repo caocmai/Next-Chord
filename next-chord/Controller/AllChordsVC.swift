@@ -24,7 +24,7 @@ class AllChordsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.9943221211, green: 0.544516325, blue: 0.2199267149, alpha: 1)
+//        view.backgroundColor = #colorLiteral(red: 0.9943221211, green: 0.544516325, blue: 0.2199267149, alpha: 1)
         navigationItem.title = "Reference"
         navigationController?.navigationBar.prefersLargeTitles = true
         //Registering the Custom Header like custom cell for tableview cell
@@ -66,11 +66,7 @@ class AllChordsVC: UIViewController {
                 tempArray = []
                 
             }
-            
         }
-        
-        
-        
     }
     
     

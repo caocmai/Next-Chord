@@ -19,7 +19,6 @@
 		2CC2C61724209C0E0096B0D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2C61524209C0E0096B0D7 /* Main.storyboard */; };
 		2CC2C61924209C0F0096B0D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2C61824209C0F0096B0D7 /* Assets.xcassets */; };
 		2CC2C61C24209C0F0096B0D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2C61A24209C0F0096B0D7 /* LaunchScreen.storyboard */; };
-		2CC2C62424209DD40096B0D7 /* ChordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2C62324209DD40096B0D7 /* ChordVC.swift */; };
 		2CCF7A1C24232A9F00A999EC /* MajorChordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF7A1B24232A9F00A999EC /* MajorChordCell.swift */; };
 		2CCF7A1E24232AB200A999EC /* MinorChordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF7A1D24232AB200A999EC /* MinorChordCell.swift */; };
 		2CCF7A202423324800A999EC /* AllChordsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF7A1F2423324800A999EC /* AllChordsVC.swift */; };
@@ -47,7 +46,6 @@
 		2CC2C61824209C0F0096B0D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CC2C61B24209C0F0096B0D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CC2C61D24209C0F0096B0D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CC2C62324209DD40096B0D7 /* ChordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordVC.swift; sourceTree = "<group>"; };
 		2CCF7A1B24232A9F00A999EC /* MajorChordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorChordCell.swift; sourceTree = "<group>"; };
 		2CCF7A1D24232AB200A999EC /* MinorChordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorChordCell.swift; sourceTree = "<group>"; };
 		2CCF7A1F2423324800A999EC /* AllChordsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChordsVC.swift; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 		2CC2C62524209DDA0096B0D7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2CC2C62324209DD40096B0D7 /* ChordVC.swift */,
 				2CC2C61324209C0E0096B0D7 /* HomeVC.swift */,
 				2C9D3C69242194F700ED613B /* TableVC.swift */,
 				2CCF7A1F2423324800A999EC /* AllChordsVC.swift */,
@@ -233,7 +230,6 @@
 				2C1A3E71242453D20085DC0D /* AllChordTableCell.swift in Sources */,
 				2CC2C61424209C0E0096B0D7 /* HomeVC.swift in Sources */,
 				2C4C84B424256F9D00F32FB5 /* GetNextChordVC.swift in Sources */,
-				2CC2C62424209DD40096B0D7 /* ChordVC.swift in Sources */,
 				2C4C84B02425669F00F32FB5 /* MyCustomHeader.swift in Sources */,
 				2CC2C61024209C0E0096B0D7 /* AppDelegate.swift in Sources */,
 				2CCF7A1E24232AB200A999EC /* MinorChordCell.swift in Sources */,

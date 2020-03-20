@@ -11,6 +11,7 @@ import UIKit
 class GetNextChordVC: UIViewController {
     
     var allMajorKeys = [KeySignature]()
+    var allTotalChords = [String]()
     
     var allOfChords = [String]()
     
@@ -18,17 +19,26 @@ class GetNextChordVC: UIViewController {
     
     var everyProgessiveChords = [[String]]()
     
+    let test = ["a", "b", "C", "D"]
+    
+    @IBOutlet weak var allChordsView: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getAllMajorKeys()
-        getMajorProgessiveChords()
-        getEveryProgessiveChords()
-        let chords = getNextChord(starting: "G")
-        print("all next chords for G:", getNextChord(starting: "G"))
-        for chord in chords {
-            print("Getting next chord of \(chord):", getNextChord(starting: chord))
-        }
+        
+        navigationItem.title = "Find The Next Chord"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        
+//        getAllMajorKeys()
+//        getMajorProgessiveChords()
+//        getEveryProgessiveChords()
+//        let chords = getNextChord(starting: "G")
+//        print("all next chords for G:", getNextChord(starting: "G"))
+//        for chord in chords {
+//            print("Getting next chord of \(chord):", getNextChord(starting: chord))
+//        }
         
         // Do any additional setup after loading the view.
     }
@@ -41,7 +51,7 @@ class GetNextChordVC: UIViewController {
         allMajorKeys.append(cMajor)
         allMajorKeys.append(dMajor)
     }
-    
+        
     func getMajorProgessiveChords() {
         
         let threeChords = [["I", "IV", "V"], // C F G
@@ -112,5 +122,21 @@ class GetNextChordVC: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
+}
+
+
+extension GetNextChordVC : UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return test.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = allChordsView.dequeueReusableCell(withReuseIdentifier: "everyChordCell", for: indexPath)
+        cell.text = "test"
+        return cell
+    }
+    
     
 }

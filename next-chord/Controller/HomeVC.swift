@@ -85,28 +85,28 @@ class HomeVC: UIViewController {
         allMinorKeys.append(eFlatMinor)
     }
     
-    @IBAction func nextVCTapped(_ sender: UIButton) {
-        
-        print(sender.currentTitle!)
-        
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "chordScreen") as! ChordVC
-        newViewController.labelName = chords[0]["I"] ?? "None"
-        // Do a switch statement here!
-        if sender.currentTitle! == "chordCMajor" {
-            newViewController.allChords = chordsCMajor
-            
-            self.view.window!.rootViewController = newViewController
-            
-            // This to move as navigationcontroller, but not must embed the nagivation controller in the storyboard first!
-            //        self.navigationController?.pushViewController(newViewController, animated: true)
-            
-            // To present view
-            //        self.present(newViewController, animated: true, completion: nil)
-        } else {
-            print("Nothing here")
-        }
-    }
+//    @IBAction func nextVCTapped(_ sender: UIButton) {
+//
+//        print(sender.currentTitle!)
+//
+//        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let newViewController = storyBoard.instantiateViewController(withIdentifier: "chordScreen") as! ChordVC
+//        newViewController.labelName = chords[0]["I"] ?? "None"
+//        // Do a switch statement here!
+//        if sender.currentTitle! == "chordCMajor" {
+//            newViewController.allChords = chordsCMajor
+//
+//            self.view.window!.rootViewController = newViewController
+//
+//            // This to move as navigationcontroller, but not must embed the nagivation controller in the storyboard first!
+//            //        self.navigationController?.pushViewController(newViewController, animated: true)
+//
+//            // To present view
+//            //        self.present(newViewController, animated: true, completion: nil)
+//        } else {
+//            print("Nothing here")
+//        }
+//    }
     
     @IBAction func selectButtonTapped(sender: UIButton) -> Void {
         print("button title: ", sender.currentTitle!)
