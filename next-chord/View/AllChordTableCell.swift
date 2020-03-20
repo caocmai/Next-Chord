@@ -9,8 +9,8 @@
 import UIKit
 
 class AllChordTableCell: UITableViewCell {
-
-    @IBOutlet weak var chordLabel1: UILabel!
+    
+    @IBOutlet weak var allChordsLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

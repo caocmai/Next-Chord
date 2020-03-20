@@ -28,17 +28,6 @@ struct KeySignature {
     
     mutating func getProgessiveChords(input1: String, input2: String, input3: String, input4: String?=nil, input5: String?=nil) {
         
-//        if let a = input1 {
-//            self.chord1 = allChords[a]
-//        }else {}
-//
-//        if let b = input2 {
-//            self.chord2 = allChords[b]
-//        }else {}
-//
-//        if let c = input3 { c
-//            self.chord3 = allChords[c]
-//        } else {}
         self.chord1 = allChords[input1]
         self.chord2 = allChords[input2]
         self.chord3 = allChords[input3]
@@ -90,30 +79,3 @@ struct SetLabel {
     var fourthLabel : String?
     var fithLabel : String?
 }
-
-
-struct MinorKeys {
-    
-}
-
-//let e = MajorKeys(I: "E", ii: "F#m", iii: "G#m", IV: "A", V: "B", vi: "C#m", viio: "D#o")
-
-
-//var e = MajorKeys(allChords: ["I":"E", "ii": "F#m", "iii": "G#m", "IV": "A", "V": "B", "vi": "C#m", "viio": "D#o"])
-//
-//e.getProgessiveChords2(input1: "I", input2: "ii")
-//print(e.chord1)
-//print(e.chord2)
-//
-//let newArray = [["V", "ii"], ["ii", "V"]]
-//var obj = [MajorKeys]()
-//for i in 0..<newArray.count {
-//
-//    var new = MajorKeys(allChords: ["I":"E", "ii": "F#m", "iii": "G#m", "IV": "A", "V": "B", "vi": "C#m", "viio": "D#o"])
-//    new.getProgessiveChords2(input1: newArray[0][i], input2: newArray[1][i])
-//    obj.append(new)
-//
-//
-//}
-//
-//print(obj[0])

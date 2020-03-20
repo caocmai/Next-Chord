@@ -20,13 +20,13 @@
                                 <rect key="frame" x="0.0" y="49" width="375" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Major" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofK-Tk-6Hl" userLabel="Major">
-                                        <rect key="frame" x="157" y="5" width="61" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <rect key="frame" x="155.5" y="5" width="64.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <color key="textColor" red="0.26312658629441621" green="0.26312658629441621" blue="0.26312658629441621" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.9725843071937561" green="0.94372674437433668" blue="0.54073757189736804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.95468562841415405" green="0.70514565706253052" blue="0.47838354110717773" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ItY-cM-gPZ"/>
                                     <constraint firstItem="ofK-Tk-6Hl" firstAttribute="centerX" secondItem="BKc-gc-OUt" secondAttribute="centerX" id="NtI-TG-EjA"/>
@@ -95,8 +95,8 @@
                                 <rect key="frame" x="0.0" y="354" width="375" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOZ-Nc-zeD">
-                                        <rect key="frame" x="156.5" y="-1" width="62" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <rect key="frame" x="154.5" y="-1" width="66" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <state key="normal" title="Minor">
                                             <color key="titleColor" red="0.24165212563451777" green="0.24165212563451777" blue="0.24165212563451777" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -105,7 +105,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.54835146878831864" green="0.88248028156115921" blue="0.51668471266157889" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.9725843072" green="0.94372674440000004" blue="0.54073757190000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="XOZ-Nc-zeD" firstAttribute="centerY" secondItem="i5t-45-otA" secondAttribute="centerY" id="Nte-1Q-OlV"/>
                                     <constraint firstItem="XOZ-Nc-zeD" firstAttribute="centerX" secondItem="i5t-45-otA" secondAttribute="centerX" id="uA8-Zx-JEC"/>
@@ -385,29 +385,28 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableCell" rowHeight="93" id="Oah-7H-ReV" customClass="AllChordTableCell" customModule="next_chord" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="93"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableCell" rowHeight="197" id="Oah-7H-ReV" customClass="AllChordTableCell" customModule="next_chord" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="197"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oah-7H-ReV" id="Np8-Gh-eT9">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="93"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="197"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8T-FM-Oum">
-                                                    <rect key="frame" x="20" y="16" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="slR-A3-YHK">
+                                                    <rect key="frame" x="15" y="83.5" width="345" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="y8T-FM-Oum" secondAttribute="bottom" constant="45" id="0qR-JS-JAW"/>
-                                                <constraint firstItem="y8T-FM-Oum" firstAttribute="top" secondItem="Np8-Gh-eT9" secondAttribute="topMargin" constant="5" id="maQ-cI-Fiw"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="y8T-FM-Oum" secondAttribute="trailing" constant="298" id="nie-Jx-XyY"/>
-                                                <constraint firstItem="y8T-FM-Oum" firstAttribute="leading" secondItem="Np8-Gh-eT9" secondAttribute="leadingMargin" constant="5" id="yKX-ou-Quu"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="slR-A3-YHK" secondAttribute="trailing" id="MHu-oS-UeT"/>
+                                                <constraint firstItem="slR-A3-YHK" firstAttribute="leading" secondItem="Np8-Gh-eT9" secondAttribute="leadingMargin" id="Qe9-5Y-ZUD"/>
+                                                <constraint firstItem="slR-A3-YHK" firstAttribute="centerY" secondItem="Np8-Gh-eT9" secondAttribute="centerY" id="sBe-yV-ATG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="chordLabel1" destination="y8T-FM-Oum" id="0aE-dQ-cY2"/>
+                                            <outlet property="allChordsLabel" destination="slR-A3-YHK" id="S92-xZ-u9A"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -490,11 +489,11 @@
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="135.38230884557723"/>
         </scene>
-        <!--All Chords-->
+        <!--Reference-->
         <scene sceneID="w1u-Rc-zan">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0t5-8u-RhZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="All Chords" image="music.note.list" catalog="system" id="bnH-j4-Iie" userLabel="All Chords"/>
+                    <tabBarItem key="tabBarItem" title="Reference" image="music.note.list" catalog="system" id="bnH-j4-Iie" userLabel="All Chords"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hL0-7J-AgH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
