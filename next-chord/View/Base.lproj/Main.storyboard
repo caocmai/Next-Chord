@@ -207,6 +207,7 @@
                     <connections>
                         <segue destination="5xD-nZ-4fM" kind="relationship" relationship="viewControllers" id="1vk-LS-t9e"/>
                         <segue destination="0t5-8u-RhZ" kind="relationship" relationship="viewControllers" id="4SV-uP-p2o"/>
+                        <segue destination="dk1-lg-ugK" kind="relationship" relationship="viewControllers" id="bhm-94-mct"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZyD-mE-HgM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -452,6 +453,22 @@
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="135.38230884557723"/>
         </scene>
+        <!--Next Chord-->
+        <scene sceneID="1Bg-TR-su9">
+            <objects>
+                <viewController id="dk1-lg-ugK" customClass="GetNextChordVC" customModule="next_chord" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8tP-MW-yp4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="QGc-mg-kMv"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Next Chord" image="magnifyingglass" catalog="system" id="vkN-wH-veb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="akG-FX-63a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="925" y="1339"/>
+        </scene>
         <!--Reference-->
         <scene sceneID="w1u-Rc-zan">
             <objects>
@@ -474,6 +491,7 @@
     </scenes>
     <resources>
         <image name="house" catalog="system" width="64" height="54"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="music.note.list" catalog="system" width="64" height="56"/>
     </resources>
 </document>

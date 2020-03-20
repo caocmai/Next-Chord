@@ -14,6 +14,8 @@ class AllChordsVC: UIViewController {
     
     var twoArray = [["a", "as", "ass"], ["B", "bb", "bbb"], ["c", "cc", "ccc"]]
     
+    // Is in 2d array because need to get the keysignature to display title
+    // So purely for the table's header
     var allKeys = [[KeySignature]]()
     
     var allOfChords = [[String]]()
