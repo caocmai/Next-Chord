@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C1A3E71242453D20085DC0D /* AllChordTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A3E70242453D20085DC0D /* AllChordTableCell.swift */; };
+		2C4C84B02425669F00F32FB5 /* MyCustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C84AF2425669F00F32FB5 /* MyCustomHeader.swift */; };
 		2C9D3C6A242194F700ED613B /* TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D3C69242194F700ED613B /* TableVC.swift */; };
 		2C9D3C6C242196F500ED613B /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D3C6B242196F500ED613B /* NewTableViewCell.swift */; };
 		2C9D3C6F2421A9B100ED613B /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D3C6E2421A9B100ED613B /* Keys.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		2C1A3E70242453D20085DC0D /* AllChordTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChordTableCell.swift; sourceTree = "<group>"; };
+		2C4C84AF2425669F00F32FB5 /* MyCustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomHeader.swift; sourceTree = "<group>"; };
 		2C9D3C69242194F700ED613B /* TableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVC.swift; sourceTree = "<group>"; };
 		2C9D3C6B242196F500ED613B /* NewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
 		2C9D3C6E2421A9B100ED613B /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				2CCF7A1B24232A9F00A999EC /* MajorChordCell.swift */,
 				2CCF7A1D24232AB200A999EC /* MinorChordCell.swift */,
 				2C1A3E70242453D20085DC0D /* AllChordTableCell.swift */,
+				2C4C84AF2425669F00F32FB5 /* MyCustomHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				2C1A3E71242453D20085DC0D /* AllChordTableCell.swift in Sources */,
 				2CC2C61424209C0E0096B0D7 /* HomeVC.swift in Sources */,
 				2CC2C62424209DD40096B0D7 /* ChordVC.swift in Sources */,
+				2C4C84B02425669F00F32FB5 /* MyCustomHeader.swift in Sources */,
 				2CC2C61024209C0E0096B0D7 /* AppDelegate.swift in Sources */,
 				2CCF7A1E24232AB200A999EC /* MinorChordCell.swift in Sources */,
 				2C9D3C6F2421A9B100ED613B /* Keys.swift in Sources */,

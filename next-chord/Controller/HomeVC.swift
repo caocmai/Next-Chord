@@ -37,7 +37,7 @@ class HomeVC: UIViewController {
         populateMinorKeyChords()
         navigationItem.title = "Select a Key"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
+        // DO ANIMATION HERE! for the title
     }
     
     func populateMajorKeyChords() {
