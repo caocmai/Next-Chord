@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GetNextChordVC: UIViewController {
+    
+    var player : AVAudioPlayer?
     
     var allMajorKeys = [KeySignature]()
     var allTotalChords = [String]()
@@ -37,9 +40,9 @@ class GetNextChordVC: UIViewController {
         allChordsView.register(UINib(nibName: "NextChordCell", bundle: .main), forCellWithReuseIdentifier: "nextChordcell")
         
 
-        getAllMajorKeys()
+        createRomanMajorChords()
         getTest()
-        getMajorProgessiveChords()
+        getAllMajorProgessiveChords()
         getEveryProgessiveChords()
         
 //        let chords = getNextChord(starting: "G")
@@ -53,8 +56,18 @@ class GetNextChordVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "secondChordVC" {
+            
+            
+            var removeDuplicate = [String]()
+            
+            for item in nextChordsArray {
+                if removeDuplicate.contains(item) == false {
+                    removeDuplicate.append(item)
+                }
+            }
+            
             let destinationVC = segue.destination as! SecondChordVC
-            destinationVC.secondChordsArray = nextChordsArray
+            destinationVC.secondChordsArray = removeDuplicate
         }
     }
     
@@ -63,6 +76,7 @@ class GetNextChordVC: UIViewController {
     func getTest() {
         
         var testArray = [String]()
+        
         for stuff in allMajorKeys {
 //            print(stuff.allChords)
             for thing in stuff.allChords.values {
@@ -82,7 +96,7 @@ class GetNextChordVC: UIViewController {
     
     
     
-    func getAllMajorKeys() {
+    func createRomanMajorChords() {
         let cMajor = KeySignature(keySignatureName: "C", allChords: ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bdim"])
         
         let dMajor = KeySignature(keySignatureName: "D", allChords: ["I":"D", "ii":"Em", "iii":"F#m", "IV":"G", "V":"A", "vi":"Bm", "viio":"C#dim"])
@@ -91,7 +105,7 @@ class GetNextChordVC: UIViewController {
         allMajorKeys.append(dMajor)
     }
         
-    func getMajorProgessiveChords() {
+    func getAllMajorProgessiveChords() {
         
         let threeChords = [["I", "IV", "V"], // C F G
                         ["ii", "V", "I"], // Dm G C
@@ -106,6 +120,40 @@ class GetNextChordVC: UIViewController {
             }
             
         }
+                
+        let fourChords = [["I", "vi", "IV", "V"],
+                          ["I", "vi", "ii", "V"],
+                          ["I", "V", "vi", "IV"],
+                          ["I", "IV", "vi", "V"],
+                          ["I", "iii", "IV", "V"],
+                          ["I", "IV", "I", "V"],
+                          ["I", "IV", "ii", "V"],
+                          ["vi", "ii", "V", "I"],
+        ]
+
+        for i in 0..<fourChords.count {
+            for key in allMajorKeys {
+                var new = key
+                new.getProgessiveChords(input1: fourChords[i][0], input2: fourChords[i][1], input3: fourChords[i][2], input4: fourChords[i][3])
+                progessiveChords.append(new)
+            }
+
+        }
+        
+        let fiveChords = [["I", "V", "vi", "iii", "IV"],
+                          ["IV", "ii", "I", "V", "I"],
+        ]
+
+        for i in 0..<fiveChords.count {
+            for key in allMajorKeys {
+                var new = key
+                new.getProgessiveChords(input1: fiveChords[i][0], input2: fiveChords[i][1], input3: fiveChords[i][2], input4: fiveChords[i][3], input5: fiveChords[i][4])
+                progessiveChords.append(new)
+            }
+
+        }
+        
+        
     }
     
     func getEveryProgessiveChords() {
@@ -116,6 +164,9 @@ class GetNextChordVC: UIViewController {
             tempArray.append(chord.chord1!)
             tempArray.append(chord.chord2!)
             tempArray.append(chord.chord3!)
+            if let safe = chord.chord4 {
+                tempArray.append(safe)
+            }
             
             everyProgessiveChords.append(tempArray)
         }
@@ -138,6 +189,10 @@ class GetNextChordVC: UIViewController {
         }
         return nextChordArray
     }
+    
+    
+    
+    
 
     
 }
@@ -158,14 +213,45 @@ extension GetNextChordVC : UICollectionViewDelegate, UICollectionViewDataSource,
         return cell
     }
     
+    func playSound(soundName: String) {
+        //        let url = Bundle.main.url(forResource: soundName, withExtension: "wav")
+        //        player = try! AVAudioPlayer(contentsOf: url!)
+        //        player?.play()
+        
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: "wav") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            /* iOS 10 and earlier require the following line:
+             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+            
+            guard let player = player else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
     @IBAction func chordButtonTapped(sender: UIButton) -> Void {
 //        print(sender.currentTitle!)
 //        print("test")
         
         nextChordsArray = getNextChord(starting: sender.currentTitle!)
-        
+        playSound(soundName: sender.currentTitle!)
 //        print(nextChordsArray)
         self.performSegue(withIdentifier: "secondChordVC", sender: nil)
+        
+        
+        
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView,

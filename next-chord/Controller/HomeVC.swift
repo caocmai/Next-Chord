@@ -10,12 +10,14 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    // NO longer needed
     var chords = [["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bo"],
                   ["I":"C#", "ii":"D#m", "iii":"E#m", "IV":"F#", "V":"G#", "vi":"A#m", "viio":"B#o"],
                   ["I":"Db", "ii":"Ebm", "iii":"Fm", "IV":"Gb", "V":"Ab", "vi":"Bbm", "viio":"Co"]
         
     ]
     
+    // no longer needed
     let chordsCMajor : [String:String] = ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bdim"]
     
     
@@ -25,7 +27,6 @@ class HomeVC: UIViewController {
     @IBOutlet weak var majorChordCV: UICollectionView!
     
     @IBOutlet weak var minorChordCV: UICollectionView!
-    
     
     
     override func viewDidLoad() {
@@ -53,7 +54,7 @@ class HomeVC: UIViewController {
         
         let eMajor = KeySignature(keySignatureName: "E", allChords: ["I":"E", "ii":"F#m", "iii":"G#m", "IV":"A", "V":"B", "vi":"C#m", "viio":"D#dim"])
         
-        let fMajor = KeySignature(keySignatureName: "F", allChords: ["I":"F", "ii":"Gm", "iii":"Am", "IV":"Bb", "V":"C", "vi":"C#m", "viio":"D#dim"])
+        let fMajor = KeySignature(keySignatureName: "F", allChords: ["I":"F", "ii":"Gm", "iii":"Am", "IV":"Bb", "V":"C", "vi":"Dm", "viio":"Edim"])
         
         
         allMajorKeys.append(cMajor)
@@ -109,7 +110,7 @@ class HomeVC: UIViewController {
 //    }
     
     @IBAction func selectButtonTapped(sender: UIButton) -> Void {
-        print("button title: ", sender.currentTitle!)
+//        print("button title: ", sender.currentTitle!)
         
         for majorkey in allMajorKeys {
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

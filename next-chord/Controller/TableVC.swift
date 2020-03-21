@@ -30,7 +30,7 @@ class TableVC: UIViewController {
             navigationItem.title = (theKey?.keySignatureName!)! + " Major"
         } else {
             getMinorChords()
-            navigationItem.title = (minorKey?.keySignatureName!)! + " Minor"
+            navigationItem.title = (minorKey?.keySignatureName!)!
         }
         // Do any additional setup after loading the view.
     }

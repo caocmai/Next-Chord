@@ -503,9 +503,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2od-R0-SrD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2od-R0-SrD">
                                 <rect key="frame" x="242" y="82" width="85" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="DISMISS" image="xmark" catalog="system">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -514,9 +513,8 @@
                                     <action selector="dismissViewTapped:" destination="Tx5-aG-23y" eventType="touchUpInside" id="ajg-az-VmN"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JLl-MJ-R9H">
-                                <rect key="frame" x="49" y="167" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JLl-MJ-R9H">
+                                <rect key="frame" x="10" y="167" width="355" height="475"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rhA-If-wsk">
                                     <size key="itemSize" width="50" height="50"/>
@@ -532,6 +530,15 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HAp-Na-02J" firstAttribute="bottom" secondItem="JLl-MJ-R9H" secondAttribute="bottom" constant="5" id="49P-Rc-PlB"/>
+                            <constraint firstItem="2od-R0-SrD" firstAttribute="leading" secondItem="HAp-Na-02J" secondAttribute="leading" constant="242" id="ME9-HT-Of4"/>
+                            <constraint firstItem="HAp-Na-02J" firstAttribute="trailing" secondItem="2od-R0-SrD" secondAttribute="trailing" constant="48" id="RYK-T7-Pzb"/>
+                            <constraint firstItem="2od-R0-SrD" firstAttribute="top" secondItem="HAp-Na-02J" secondAttribute="top" constant="82" id="dGq-9p-XjL"/>
+                            <constraint firstItem="HAp-Na-02J" firstAttribute="trailing" secondItem="JLl-MJ-R9H" secondAttribute="trailing" constant="10" id="jUA-lx-thJ"/>
+                            <constraint firstItem="JLl-MJ-R9H" firstAttribute="leading" secondItem="HAp-Na-02J" secondAttribute="leading" constant="10" id="mjJ-mi-1sW"/>
+                            <constraint firstItem="JLl-MJ-R9H" firstAttribute="top" secondItem="2od-R0-SrD" secondAttribute="bottom" constant="64" id="tfU-0Q-BJW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HAp-Na-02J"/>
                     </view>
                     <connections>

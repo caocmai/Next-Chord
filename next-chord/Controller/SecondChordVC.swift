@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 class SecondChordVC: UIViewController {
     
+    var player : AVAudioPlayer?
+
     var secondChordsArray : [String]?
     
 
@@ -24,11 +28,47 @@ class SecondChordVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
     @IBAction func dismissViewTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
 
     }
+    
+     @IBAction func chordButtonTapped(sender: UIButton) -> Void {
+    //        print(sender.currentTitle!)
+    //        print("test")
+        playSound(soundName: sender.currentTitle!)
+//            nextChordsArray = getNextChord(starting: sender.currentTitle!)
+//            playSound(soundName: sender.currentTitle!)
+    //        print(nextChordsArray)
+//            self.performSegue(withIdentifier: "secondChordVC", sender: nil)
+    }
+    
+    func playSound(soundName: String) {
+        //        let url = Bundle.main.url(forResource: soundName, withExtension: "wav")
+        //        player = try! AVAudioPlayer(contentsOf: url!)
+        //        player?.play()
+        
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: "wav") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            /* iOS 10 and earlier require the following line:
+             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+            
+            guard let player = player else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+            
     /*
     // MARK: - Navigation
 
@@ -50,7 +90,8 @@ extension SecondChordVC : UICollectionViewDelegate, UICollectionViewDataSource, 
         let cell = secondChordCV.dequeueReusableCell(withReuseIdentifier: "secondChordCell", for: indexPath) as! SecondChordCell
         cell.layer.cornerRadius = 7
         cell.secondChordButtonLabel.setTitle(secondChordsArray![indexPath.row], for: .normal)
-        
+        cell.secondChordButtonLabel.addTarget(self, action: #selector(chordButtonTapped), for: .touchUpInside)
+
         cell.backgroundColor = .cyan
         
         return cell
