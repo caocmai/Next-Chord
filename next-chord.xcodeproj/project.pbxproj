@@ -30,6 +30,9 @@
 		2CDA2F8B2421D78700D24465 /* Am.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CDA2F8A2421D78600D24465 /* Am.wav */; };
 		2CDA2F8D2421DE6100D24465 /* Dm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CDA2F8C2421DE6100D24465 /* Dm.wav */; };
 		2CDA2F8F2421E35F00D24465 /* Em.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CDA2F8E2421E35F00D24465 /* Em.wav */; };
+		2CDA479B2425C8E500D5B5D6 /* SecondChordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA47992425C8E500D5B5D6 /* SecondChordCell.swift */; };
+		2CDA479C2425C8E500D5B5D6 /* SecondChordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDA479A2425C8E500D5B5D6 /* SecondChordCell.xib */; };
+		2CE4A6982425B72E0020A524 /* SecondChordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4A6972425B72E0020A524 /* SecondChordVC.swift */; };
 		2CEE925E24221AA8008F4D52 /* Bdim.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CEE925D24221AA8008F4D52 /* Bdim.wav */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +62,9 @@
 		2CDA2F8A2421D78600D24465 /* Am.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Am.wav; sourceTree = "<group>"; };
 		2CDA2F8C2421DE6100D24465 /* Dm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Dm.wav; sourceTree = "<group>"; };
 		2CDA2F8E2421E35F00D24465 /* Em.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Em.wav; sourceTree = "<group>"; };
+		2CDA47992425C8E500D5B5D6 /* SecondChordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondChordCell.swift; sourceTree = "<group>"; };
+		2CDA479A2425C8E500D5B5D6 /* SecondChordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondChordCell.xib; sourceTree = "<group>"; };
+		2CE4A6972425B72E0020A524 /* SecondChordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondChordVC.swift; sourceTree = "<group>"; };
 		2CEE925D24221AA8008F4D52 /* Bdim.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Bdim.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +90,8 @@
 				2C4C84AF2425669F00F32FB5 /* MyCustomHeader.swift */,
 				2C77E6E52425A98400FE7A0E /* NextChordCell.swift */,
 				2C77E6E62425A98400FE7A0E /* NextChordCell.xib */,
+				2CDA47992425C8E500D5B5D6 /* SecondChordCell.swift */,
+				2CDA479A2425C8E500D5B5D6 /* SecondChordCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -135,6 +143,7 @@
 				2C9D3C69242194F700ED613B /* TableVC.swift */,
 				2CCF7A1F2423324800A999EC /* AllChordsVC.swift */,
 				2C4C84B324256F9D00F32FB5 /* GetNextChordVC.swift */,
+				2CE4A6972425B72E0020A524 /* SecondChordVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -219,6 +228,7 @@
 				2CDA2F8B2421D78700D24465 /* Am.wav in Resources */,
 				2CEE925E24221AA8008F4D52 /* Bdim.wav in Resources */,
 				2C77E6E82425A98400FE7A0E /* NextChordCell.xib in Resources */,
+				2CDA479C2425C8E500D5B5D6 /* SecondChordCell.xib in Resources */,
 				2CC2C61924209C0F0096B0D7 /* Assets.xcassets in Resources */,
 				2CC2C61724209C0E0096B0D7 /* Main.storyboard in Resources */,
 				2CDA2F872421D5CF00D24465 /* F.wav in Resources */,
@@ -237,12 +247,14 @@
 				2C1A3E71242453D20085DC0D /* AllChordTableCell.swift in Sources */,
 				2CC2C61424209C0E0096B0D7 /* HomeVC.swift in Sources */,
 				2C4C84B424256F9D00F32FB5 /* GetNextChordVC.swift in Sources */,
+				2CE4A6982425B72E0020A524 /* SecondChordVC.swift in Sources */,
 				2C4C84B02425669F00F32FB5 /* MyCustomHeader.swift in Sources */,
 				2CC2C61024209C0E0096B0D7 /* AppDelegate.swift in Sources */,
 				2C77E6E72425A98400FE7A0E /* NextChordCell.swift in Sources */,
 				2CCF7A1E24232AB200A999EC /* MinorChordCell.swift in Sources */,
 				2C9D3C6F2421A9B100ED613B /* Keys.swift in Sources */,
 				2CCF7A202423324800A999EC /* AllChordsVC.swift in Sources */,
+				2CDA479B2425C8E500D5B5D6 /* SecondChordCell.swift in Sources */,
 				2C9D3C6A242194F700ED613B /* TableVC.swift in Sources */,
 				2CC2C61224209C0E0096B0D7 /* SceneDelegate.swift in Sources */,
 			);

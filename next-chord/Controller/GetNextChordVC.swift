@@ -21,6 +21,8 @@ class GetNextChordVC: UIViewController {
     
     var test = [String]()
     
+    var nextChordsArray : [String] = []
+    
     @IBOutlet weak var allChordsView: UICollectionView!
     
     
@@ -39,6 +41,7 @@ class GetNextChordVC: UIViewController {
         getTest()
         getMajorProgessiveChords()
         getEveryProgessiveChords()
+        
 //        let chords = getNextChord(starting: "G")
 //        print("all next chords for G:", getNextChord(starting: "G"))
 //        for chord in chords {
@@ -47,6 +50,15 @@ class GetNextChordVC: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "secondChordVC" {
+            let destinationVC = segue.destination as! SecondChordVC
+            destinationVC.secondChordsArray = nextChordsArray
+        }
+    }
+    
+    
     
     func getTest() {
         
@@ -128,20 +140,10 @@ class GetNextChordVC: UIViewController {
     }
 
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 
-extension GetNextChordVC : UICollectionViewDelegate, UICollectionViewDataSource {
+extension GetNextChordVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return test.count
@@ -149,6 +151,7 @@ extension GetNextChordVC : UICollectionViewDelegate, UICollectionViewDataSource 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = allChordsView.dequeueReusableCell(withReuseIdentifier: "nextChordcell", for: indexPath) as! NextChordCell
+        cell.layer.cornerRadius = 7
         cell.backgroundColor = .yellow
         cell.chordButtonLabel.setTitle(test[indexPath.row], for: .normal)
         cell.chordButtonLabel.addTarget(self, action: #selector(chordButtonTapped), for: .touchUpInside)
@@ -159,9 +162,35 @@ extension GetNextChordVC : UICollectionViewDelegate, UICollectionViewDataSource 
 //        print(sender.currentTitle!)
 //        print("test")
         
-        let nextChords = getNextChord(starting: sender.currentTitle!)
+        nextChordsArray = getNextChord(starting: sender.currentTitle!)
         
-        print(nextChords)
+//        print(nextChordsArray)
+        self.performSegue(withIdentifier: "secondChordVC", sender: nil)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 75, height: 75)
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 15.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout
+        collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 40.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
     }
     
     
