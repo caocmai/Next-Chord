@@ -19,7 +19,7 @@ class GetNextChordVC: UIViewController {
     
     var everyProgessiveChords = [[String]]()
     
-    let test = ["a", "b", "C", "D"]
+    var test = [String]()
     
     @IBOutlet weak var allChordsView: UICollectionView!
     
@@ -30,10 +30,15 @@ class GetNextChordVC: UIViewController {
         navigationItem.title = "Find The Next Chord"
         navigationController?.navigationBar.prefersLargeTitles = true
         
+    
         
-//        getAllMajorKeys()
-//        getMajorProgessiveChords()
-//        getEveryProgessiveChords()
+        allChordsView.register(UINib(nibName: "NextChordCell", bundle: .main), forCellWithReuseIdentifier: "nextChordcell")
+        
+
+        getAllMajorKeys()
+        getTest()
+        getMajorProgessiveChords()
+        getEveryProgessiveChords()
 //        let chords = getNextChord(starting: "G")
 //        print("all next chords for G:", getNextChord(starting: "G"))
 //        for chord in chords {
@@ -42,6 +47,28 @@ class GetNextChordVC: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    func getTest() {
+        
+        var testArray = [String]()
+        for stuff in allMajorKeys {
+//            print(stuff.allChords)
+            for thing in stuff.allChords.values {
+                testArray.append(thing)
+                
+            }
+        }
+        
+        for item in testArray {
+            if test.contains(item) == false {
+                test.append(item)
+            }
+        }
+        
+//        print(test)
+    }
+    
+    
     
     func getAllMajorKeys() {
         let cMajor = KeySignature(keySignatureName: "C", allChords: ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bdim"])
@@ -70,13 +97,13 @@ class GetNextChordVC: UIViewController {
     }
     
     func getEveryProgessiveChords() {
-        for stuff in progessiveChords {
+        for chord in progessiveChords {
             
             var tempArray = [String]()
             
-            tempArray.append(stuff.chord1!)
-            tempArray.append(stuff.chord2!)
-            tempArray.append(stuff.chord3!)
+            tempArray.append(chord.chord1!)
+            tempArray.append(chord.chord2!)
+            tempArray.append(chord.chord3!)
             
             everyProgessiveChords.append(tempArray)
         }
@@ -84,24 +111,12 @@ class GetNextChordVC: UIViewController {
 //        print(everyProgessiveChords)
     }
     
-//    func getNextChord(starting: String) -> [String] {
-//
-//        var nextChordArray = [String]()
-//
-//        for i in 0..<everyProgessiveChords.count - 1 {
-//            if everyProgessiveChords[i] == starting {
-//                nextChordArray.append(everyProgessiveChords[i+1])
-//            }
-//        }
-//        return nextChordArray
-//    }
-    
     func getNextChord(starting: String) -> [String] {
         
         var nextChordArray = [String]()
 
         for i in 0..<everyProgessiveChords.count{
-            print(everyProgessiveChords[i])
+//            print(everyProgessiveChords[i])
             for y in 0..<everyProgessiveChords[i].count - 1 {
                 
                 if everyProgessiveChords[i][y] == starting {
@@ -133,9 +148,20 @@ extension GetNextChordVC : UICollectionViewDelegate, UICollectionViewDataSource 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = allChordsView.dequeueReusableCell(withReuseIdentifier: "everyChordCell", for: indexPath)
-        cell.text = "test"
+        let cell = allChordsView.dequeueReusableCell(withReuseIdentifier: "nextChordcell", for: indexPath) as! NextChordCell
+        cell.backgroundColor = .yellow
+        cell.chordButtonLabel.setTitle(test[indexPath.row], for: .normal)
+        cell.chordButtonLabel.addTarget(self, action: #selector(chordButtonTapped), for: .touchUpInside)
         return cell
+    }
+    
+    @IBAction func chordButtonTapped(sender: UIButton) -> Void {
+//        print(sender.currentTitle!)
+//        print("test")
+        
+        let nextChords = getNextChord(starting: sender.currentTitle!)
+        
+        print(nextChords)
     }
     
     

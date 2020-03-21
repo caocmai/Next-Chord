@@ -11,9 +11,7 @@ import UIKit
 class TableVC: UIViewController {
     
     var player : AVAudioPlayer?
-    
-    let sampleData : [String] = ["JOne", "Bob", "Jone", "Lisa"]
-    
+        
     var theKey : KeySignature?
     var minorKey : KeySignature?
     var progessiveChords = [KeySignature]()
