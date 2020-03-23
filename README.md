@@ -7,10 +7,11 @@ Next Chord is an iOS app intended for musicians to find the next suggested chord
 ### Features
 * Home Screen - Displays major and minor chords as UICollectionview
 * Chord Progression Pattern Screen - Dynamically displays chord progression patterns of key signature as UITableview
+* Sound Playback - Sounds of chords can be heard when is tapped in the Chord Progression Pattern Screen
 * Reference Screen - List of chords and for key signatures as UITableview
 * New Chord Screen - Dynamically show the next chord based on the selected chord as UICollectionsViews
 
-### Basic App Walk-through
+### Basic App Walkthrough
 ![](nextChordProjectWalk.gif)
 
 ### Run Locally
@@ -29,5 +30,7 @@ https://www.makeschool.com/portfolio/Cao-Mai
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
-Currently (as of March 2020), the project runs successfully without any error. However, this is a work in progress and not all key signatures/chords are yet added to the project.
+## Note
+Currently (as of March 2020), the project runs successfully without any error. However, this is a work in progress and not all key signatures/chords are yet added to the project. Most chords don't yet have sounds because they haven't been added. Only keys C major and C minor have chord sounds.
+
+Will try to add more key signatures and chord sounds  when time permits.
