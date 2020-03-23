@@ -22,12 +22,16 @@ class SecondChordVC: UIViewController {
     
     var chordSelectionDelegate : SecondChordSelectionDelegate?
     
-
+    var chordLabel : String?
+    
+    @IBOutlet weak var nextChordLabel: UILabel!
+    
     @IBOutlet weak var secondChordCV: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        print(secondChordsArray!)
+        nextChordLabel.text = "Next Chord For \(String(describing: chordLabel!))"
         
         secondChordCV.register(UINib(nibName: "SecondChordCell", bundle: .main), forCellWithReuseIdentifier: "secondChordCell")
         // Do any additional setup after loading the view.
