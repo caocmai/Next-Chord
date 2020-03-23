@@ -1,5 +1,5 @@
 # Next Chord 
-An iOS app for musicians to find the next chord of a selected chord.
+An iOS app for musicians to find the next chord to aid in music writing or improvising.
 
 ## Description
 Next Chord is an iOS app intended for musicians to find the next suggested chord based on the parent chord. Suggested chords is based on common conventional chord progression patterns used in music. More information at https://en.wikipedia.org/wiki/Chord_progression
@@ -12,7 +12,6 @@ Next Chord is an iOS app intended for musicians to find the next suggested chord
 
 ### Basic App Walk-through
 ![](nextChordProjectWalk.gif)
-
 
 ### Run Locally
 
@@ -31,4 +30,4 @@ https://www.makeschool.com/portfolio/Cao-Mai
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
-Currently (as of March 2020), the project runs successfully without any error. However, this is a work in progress and not all key signatures are yet added to the project
+Currently (as of March 2020), the project runs successfully without any error. However, this is a work in progress and not all key signatures/chords are yet added to the project.
