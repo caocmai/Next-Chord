@@ -9,6 +9,10 @@
 import UIKit
 import AVFoundation
 
+protocol SecondChordSelectionDelegate {
+    func didTapChord(button: String)
+}
+
 
 class SecondChordVC: UIViewController {
     
@@ -16,9 +20,10 @@ class SecondChordVC: UIViewController {
 
     var secondChordsArray : [String]?
     
+    var chordSelectionDelegate : SecondChordSelectionDelegate?
+    
 
     @IBOutlet weak var secondChordCV: UICollectionView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +39,14 @@ class SecondChordVC: UIViewController {
     }
     
      @IBAction func chordButtonTapped(sender: UIButton) -> Void {
-    //        print(sender.currentTitle!)
-    //        print("test")
-        playSound(soundName: sender.currentTitle!)
+//        playSound(soundName: sender.currentTitle!)
 //            nextChordsArray = getNextChord(starting: sender.currentTitle!)
 //            playSound(soundName: sender.currentTitle!)
     //        print(nextChordsArray)
-//            self.performSegue(withIdentifier: "secondChordVC", sender: nil)
+        
+
+        chordSelectionDelegate?.didTapChord(button: sender.currentTitle!)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func playSound(soundName: String) {
@@ -124,3 +130,5 @@ extension SecondChordVC : UICollectionViewDelegate, UICollectionViewDataSource, 
     
     
 }
+
+

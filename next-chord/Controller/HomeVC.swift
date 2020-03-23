@@ -25,10 +25,9 @@ class HomeVC: UIViewController {
     var allMinorKeys = [KeySignature]()
     
     @IBOutlet weak var majorChordCV: UICollectionView!
-    
     @IBOutlet weak var minorChordCV: UICollectionView!
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -39,6 +38,7 @@ class HomeVC: UIViewController {
         navigationItem.title = "Select a Key"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
+    
     
     func populateMajorKeyChords() {
         
@@ -74,9 +74,9 @@ class HomeVC: UIViewController {
         
         let dMinor = KeySignature(keySignatureName: "Dm", allChords: ["i":"Dm", "iio":"Edim", "III":"F", "iv":"Gm", "v":"Am", "VI":"Bb", "VII":"C"])
         
-        let dSharpMinor = KeySignature(keySignatureName: "D#m", allChords: ["i":"Dm", "iio":"E#dim", "III":"F#", "iv":"G#m", "v":"A#m", "VI":"B", "VII":"C#"])
+        let dSharpMinor = KeySignature(keySignatureName: "D#m", allChords: ["i":"D#m", "iio":"E#dim", "III":"F#", "iv":"G#m", "v":"A#m", "VI":"B", "VII":"C#"])
         
-        let eFlatMinor = KeySignature(keySignatureName: "Ebm", allChords: ["i":"Dm", "iio":"Fdim", "III":"Gb", "iv":"Abm", "v":"Bbm", "VI":"Cb", "VII":"Db"])
+        let eFlatMinor = KeySignature(keySignatureName: "Ebm", allChords: ["i":"Ebm", "iio":"Fdim", "III":"Gb", "iv":"Abm", "v":"Bbm", "VI":"B", "VII":"Db"])
         
         
         allMinorKeys.append(cMinor)
@@ -204,3 +204,4 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
     
     
 }
+

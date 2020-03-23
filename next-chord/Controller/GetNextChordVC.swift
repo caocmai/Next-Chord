@@ -26,16 +26,28 @@ class GetNextChordVC: UIViewController {
     
     var nextChordsArray : [String] = []
     
-    @IBOutlet weak var allChordsView: UICollectionView!
+    var returnedChord : String?
     
+    let samplebutton : UIButton = {
+        let button = UIButton()
+        button.setTitle("BIG button", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .red
+        return button
+    }()
+    
+    @IBOutlet weak var allChordsView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         navigationItem.title = "Find The Next Chord"
         navigationController?.navigationBar.prefersLargeTitles = true
         
-    
+        view.addSubview(samplebutton)
+        samplebutton.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
+        samplebutton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         
         allChordsView.register(UINib(nibName: "NextChordCell", bundle: .main), forCellWithReuseIdentifier: "nextChordcell")
         
@@ -55,23 +67,13 @@ class GetNextChordVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "secondChordVC" {
-            
-            
-            var removeDuplicate = [String]()
-            
-            for item in nextChordsArray {
-                if removeDuplicate.contains(item) == false {
-                    removeDuplicate.append(item)
-                }
-            }
-            
             let destinationVC = segue.destination as! SecondChordVC
-            destinationVC.secondChordsArray = removeDuplicate
+            destinationVC.chordSelectionDelegate = self
+            destinationVC.secondChordsArray = nextChordsArray
         }
     }
-    
-    
     
     func getTest() {
         
@@ -176,24 +178,29 @@ class GetNextChordVC: UIViewController {
     
     func getNextChord(starting: String) -> [String] {
         
-        var nextChordArray = [String]()
+        var nextChordArrayWithDuplicates = [String]()
 
         for i in 0..<everyProgessiveChords.count{
 //            print(everyProgessiveChords[i])
             for y in 0..<everyProgessiveChords[i].count - 1 {
                 
                 if everyProgessiveChords[i][y] == starting {
-                    nextChordArray.append(everyProgessiveChords[i][y+1])
+                    nextChordArrayWithDuplicates.append(everyProgessiveChords[i][y+1])
                 }
             }
         }
-        return nextChordArray
+        print(nextChordArrayWithDuplicates)
+        
+        var removeDuplicate = [String]()
+        
+        for item in nextChordArrayWithDuplicates {
+            if removeDuplicate.contains(item) == false {
+                removeDuplicate.append(item)
+            }
+        }
+        
+        return removeDuplicate
     }
-    
-    
-    
-    
-
     
 }
 
@@ -205,12 +212,23 @@ extension GetNextChordVC : UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = allChordsView.dequeueReusableCell(withReuseIdentifier: "nextChordcell", for: indexPath) as! NextChordCell
-        cell.layer.cornerRadius = 7
-        cell.backgroundColor = .yellow
-        cell.chordButtonLabel.setTitle(test[indexPath.row], for: .normal)
-        cell.chordButtonLabel.addTarget(self, action: #selector(chordButtonTapped), for: .touchUpInside)
-        return cell
+        if returnedChord != nil {
+            let cell = allChordsView.dequeueReusableCell(withReuseIdentifier: "nextChordcell", for: indexPath) as! NextChordCell
+            print("the button is not nil")
+            cell.layer.cornerRadius = 7
+            cell.backgroundColor = .yellow
+            cell.chordButtonLabel.setTitle(test[indexPath.row], for: .normal)
+            cell.chordButtonLabel.addTarget(self, action: #selector(chordButtonTapped), for: .touchUpInside)
+            return cell
+        } else {
+            let cell = allChordsView.dequeueReusableCell(withReuseIdentifier: "nextChordcell", for: indexPath) as! NextChordCell
+            print("button is nil")
+            cell.layer.cornerRadius = 7
+            cell.backgroundColor = .yellow
+            cell.chordButtonLabel.setTitle(test[indexPath.row], for: .normal)
+            cell.chordButtonLabel.addTarget(self, action: #selector(chordButtonTapped), for: .touchUpInside)
+            return cell
+        }
     }
     
     func playSound(soundName: String) {
@@ -244,10 +262,9 @@ extension GetNextChordVC : UICollectionViewDelegate, UICollectionViewDataSource,
 //        print("test")
         
         nextChordsArray = getNextChord(starting: sender.currentTitle!)
-        playSound(soundName: sender.currentTitle!)
+//        playSound(soundName: sender.currentTitle!)
 //        print(nextChordsArray)
         self.performSegue(withIdentifier: "secondChordVC", sender: nil)
-        
         
         
         
@@ -280,4 +297,19 @@ extension GetNextChordVC : UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
     
+}
+
+
+extension GetNextChordVC: SecondChordSelectionDelegate {
+    func didTapChord(button: String) {
+//        print("button clicked", button)
+        samplebutton.setTitle(button, for: .normal)
+        
+        returnedChord = button
+        navigationItem.title = "The Next Chord For \(button)"
+
+        allChordsView.reloadData()
+        
+    }
+
 }
