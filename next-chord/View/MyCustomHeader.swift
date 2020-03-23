@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Got from Apple's documentation
 class MyCustomHeader: UITableViewHeaderFooterView {
     
     static var identifier: String = "sectionHeader"
@@ -39,20 +40,7 @@ class MyCustomHeader: UITableViewHeaderFooterView {
 //        contentView.addSubview(image)
         contentView.addSubview(title)
 
-        // Center the image vertically and place it near the leading
-        // edge of the view. Constrain its width and height to 50 points.
         NSLayoutConstraint.activate([
-//            image.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-//            image.widthAnchor.constraint(equalToConstant: 50),
-//            image.heightAnchor.constraint(equalToConstant: 50),
-//            image.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-
-            // Center the label vertically, and use it to fill the remaining
-            // space in the header view.
-            title.heightAnchor.constraint(equalToConstant: 30),
-//            title.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor, constant: 10),
-//            title.trailingAnchor.constraint(equalTo:
-//                   contentView.layoutMarginsGuide.trailingAnchor),
             title.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             title.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])

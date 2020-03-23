@@ -31,7 +31,7 @@ class SecondChordVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        print(secondChordsArray!)
-        print(secondChordsArray!)
+//        print(secondChordsArray!)
         
         toUpdateHeader()
         

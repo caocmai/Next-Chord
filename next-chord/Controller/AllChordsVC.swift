@@ -10,10 +10,7 @@ import UIKit
 
 class AllChordsVC: UIViewController {
     
-    var oneArray = ["a", "aa", "aaa"]
-    
-    var twoArray = [["a", "as", "ass"], ["B", "bb", "bbb"], ["c", "cc", "ccc"]]
-    
+        
     // Is in 2d array because need to get the keysignature to display title
     // So purely for the table's header
     var allKeys = [[KeySignature]]()
@@ -46,9 +43,25 @@ class AllChordsVC: UIViewController {
         
         let cMinor = KeySignature(keySignatureName: "Cm", allChords: ["i":"Cm", "iio":"Ddim", "III":"Eb", "iv":"Fm", "v":"Gm", "VI":"Ab", "VII":"Bb"])
         
+        
+        let dFlatMajor = KeySignature(keySignatureName: "Db", allChords: ["I":"Db", "ii":"Ebm", "iii":"Fm", "IV":"Gb", "V":"Ab", "vi":"Bbm", "viio":"Cdim"])
+        
+        let dMajor = KeySignature(keySignatureName: "D", allChords: ["I":"D", "ii":"Em", "iii":"F#m", "IV":"G", "V":"A", "vi":"Bm", "viio":"C#dim"])
+        
+        let eFlatMajor = KeySignature(keySignatureName: "Eb", allChords: ["I":"Eb", "ii":"Fm", "iii":"Gm", "IV":"Ab", "V":"Bb", "vi":"Cm", "viio":"Ddim"])
+        
+        let eMajor = KeySignature(keySignatureName: "E", allChords: ["I":"E", "ii":"F#m", "iii":"G#m", "IV":"A", "V":"B", "vi":"C#m", "viio":"D#dim"])
+        
+        let fMajor = KeySignature(keySignatureName: "F", allChords: ["I":"F", "ii":"Gm", "iii":"Am", "IV":"Bb", "V":"C", "vi":"Dm", "viio":"Edim"])
+        
         allKeys.append([cMajor])
         allKeys.append([cSharpMajor])
         allKeys.append([cMinor])
+        allKeys.append([dFlatMajor])
+        allKeys.append([dMajor])
+        allKeys.append([eFlatMajor])
+        allKeys.append([eMajor])
+        allKeys.append([fMajor])
         
     }
     
@@ -59,29 +72,14 @@ class AllChordsVC: UIViewController {
                 
                 var tempArray : [String] = []
                 let value = chord.allChords.values
-                //                print(value)
                 
-                tempArray.append(contentsOf: value)
+                tempArray.append(contentsOf: value) // This adds all the values randomly to tempArray
                 allOfChords.append(tempArray)
                 tempArray = []
-                
+    
             }
         }
     }
-    
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 
@@ -92,13 +90,17 @@ extension AllChordsVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 65
     }
     
     //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     //        return allKeys[section][0].keySignatureName
     //
     //    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 35
+    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
@@ -109,55 +111,40 @@ extension AllChordsVC : UITableViewDelegate, UITableViewDataSource {
         
         view.title.text = name
         
-        //        let label = UILabel()
-        //        label.translatesAutoresizingMaskIntoConstraints = false
-        //        label.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor, constant: 5).isActive = true
-        //        let name = allKeys[section][0].keySignatureName
-        //        label.text = name
-        //        label.font = UIFont.systemFont(ofSize: 24.0)
-        //        label.backgroundColor = .gray
         
         return view
     }
     
-    //    override func tableView(_ tableView: UITableView,
-    //            viewForHeaderInSection section: Int) -> UIView? {
-    //       let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
-    //                   "sectionHeader") as! MyCustomHeader
-    //       view.title.text = sections[section]
-    //       view.image.image = UIImage(named: sectionImages[section])
-    //
-    //       return view
-    //    }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allOfChords[section].count
+        //To display horizontally use allkeys instead of all chords 2d array
+        return allKeys[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! AllChordTableCell
         
-        
-        //        let key = twoArray[indexPath.section][indexPath.row]
-        let key = allOfChords[indexPath.section][indexPath.row]
+        // To display horizontally, allkeys must be 2d array
+                let key = allKeys[indexPath.section][indexPath.row]
+        // To display veritcally also change the numberOfRowsInSection appropriately
+//        let key = allOfChords[indexPath.section][indexPath.row]
         //        print(key)
         
-        //        var label = ""
-        //
-        //        for chord in key.allChords {
-        //
-        //            label.append(chord.value)
-        //            label.append("  ")
-        //
-        //        }
+                var label = ""
         
-        //        print(label)
+                for chord in key.allChords {
         
-        cell.allChordsLabel.text = key
+                    label.append(chord.value)
+                    label.append("  ")
+        
+                }
+        
+//                print(label)
+        
+        cell.allChordsLabel.text = label
         return cell
     }
-    
-    
+
 }
 
 

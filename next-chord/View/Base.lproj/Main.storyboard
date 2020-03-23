@@ -460,7 +460,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="keC-Sb-8YW">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="keC-Sb-8YW">
                                 <rect key="frame" x="10" y="49" width="355" height="509"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b6j-tX-v7E">
@@ -494,7 +494,6 @@
                         <constraints>
                             <constraint firstItem="keC-Sb-8YW" firstAttribute="top" secondItem="QGc-mg-kMv" secondAttribute="top" constant="5" id="BLa-3J-vzi"/>
                             <constraint firstItem="keC-Sb-8YW" firstAttribute="leading" secondItem="QGc-mg-kMv" secondAttribute="leading" constant="10" id="GAc-D7-Hwk"/>
-                            <constraint firstItem="QGc-mg-kMv" firstAttribute="bottom" secondItem="keC-Sb-8YW" secondAttribute="bottom" constant="60" id="OS7-28-Azp"/>
                             <constraint firstItem="n06-dH-0k1" firstAttribute="leading" secondItem="QGc-mg-kMv" secondAttribute="leading" constant="10" id="cFw-rh-K9L"/>
                             <constraint firstItem="QGc-mg-kMv" firstAttribute="trailing" secondItem="n06-dH-0k1" secondAttribute="trailing" constant="10" id="cvo-Hj-zDv"/>
                             <constraint firstItem="QGc-mg-kMv" firstAttribute="trailing" secondItem="keC-Sb-8YW" secondAttribute="trailing" constant="10" id="p8o-FR-mHZ"/>

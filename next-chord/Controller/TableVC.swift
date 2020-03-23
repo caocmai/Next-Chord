@@ -49,10 +49,10 @@ class TableVC: UIViewController {
         
         if theKey != nil {
             getMajorChords()
-            navigationItem.title = (theKey?.keySignatureName!)! + " Major"
+            navigationItem.title = (theKey?.keySignatureName!)! + " (Major)"
         } else {
             getMinorChords()
-            navigationItem.title = (minorKey?.keySignatureName!)!
+            navigationItem.title = (minorKey?.keySignatureName!)! + " (Minor)"
         }
         
     }
