@@ -24,14 +24,8 @@ class TableVC: UIViewController {
         newTableView.layer.cornerRadius = 7
         newTableView.delegate = self
         newTableView.dataSource = self
+        updateHeader()
         
-        if theKey != nil {
-            getMajorChords()
-            navigationItem.title = (theKey?.keySignatureName!)! + " Major"
-        } else {
-            getMinorChords()
-            navigationItem.title = (minorKey?.keySignatureName!)!
-        }
         // Do any additional setup after loading the view.
     }
     
@@ -50,6 +44,18 @@ class TableVC: UIViewController {
     //
     //        print(allLabels)
     //    }
+    
+    func updateHeader() {
+        
+        if theKey != nil {
+            getMajorChords()
+            navigationItem.title = (theKey?.keySignatureName!)! + " Major"
+        } else {
+            getMinorChords()
+            navigationItem.title = (minorKey?.keySignatureName!)!
+        }
+        
+    }
     
     func getMajorChords() {
         

@@ -522,7 +522,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2od-R0-SrD">
-                                <rect key="frame" x="242" y="30" width="103" height="21"/>
+                                <rect key="frame" x="260.5" y="30" width="84.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="DISMISS" image="xmark" catalog="system">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -578,15 +578,14 @@
                             <constraint firstItem="kPM-bv-arX" firstAttribute="leading" secondItem="HAp-Na-02J" secondAttribute="leading" constant="10" id="68n-h4-iPo"/>
                             <constraint firstItem="jnI-P7-GIW" firstAttribute="leading" secondItem="HAp-Na-02J" secondAttribute="leading" constant="10" id="Jv3-1h-q3A"/>
                             <constraint firstItem="HAp-Na-02J" firstAttribute="trailing" secondItem="jnI-P7-GIW" secondAttribute="trailing" constant="10" id="Lbu-y1-uKq"/>
-                            <constraint firstItem="2od-R0-SrD" firstAttribute="leading" secondItem="HAp-Na-02J" secondAttribute="leading" constant="242" id="ME9-HT-Of4"/>
                             <constraint firstItem="HAp-Na-02J" firstAttribute="bottom" secondItem="jnI-P7-GIW" secondAttribute="bottom" constant="10" id="Qes-Iq-iIC"/>
                             <constraint firstItem="HAp-Na-02J" firstAttribute="trailing" secondItem="2od-R0-SrD" secondAttribute="trailing" constant="30" id="RYK-T7-Pzb"/>
                             <constraint firstItem="2od-R0-SrD" firstAttribute="top" secondItem="HAp-Na-02J" secondAttribute="top" constant="30" id="dGq-9p-XjL"/>
                             <constraint firstItem="kPM-bv-arX" firstAttribute="top" secondItem="2od-R0-SrD" secondAttribute="bottom" constant="31" id="fT3-se-iA3"/>
                             <constraint firstItem="HAp-Na-02J" firstAttribute="trailing" secondItem="JLl-MJ-R9H" secondAttribute="trailing" constant="10" id="jUA-lx-thJ"/>
                             <constraint firstItem="JLl-MJ-R9H" firstAttribute="leading" secondItem="HAp-Na-02J" secondAttribute="leading" constant="10" id="mjJ-mi-1sW"/>
+                            <constraint firstItem="JLl-MJ-R9H" firstAttribute="top" secondItem="kPM-bv-arX" secondAttribute="bottom" constant="3" id="nOC-Py-wR2"/>
                             <constraint firstItem="HAp-Na-02J" firstAttribute="trailing" secondItem="kPM-bv-arX" secondAttribute="trailing" constant="10" id="oZP-Ha-c8R"/>
-                            <constraint firstItem="JLl-MJ-R9H" firstAttribute="top" secondItem="2od-R0-SrD" secondAttribute="bottom" constant="64" id="tfU-0Q-BJW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HAp-Na-02J"/>
                     </view>

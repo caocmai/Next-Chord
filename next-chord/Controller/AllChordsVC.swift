@@ -105,7 +105,7 @@ extension AllChordsVC : UITableViewDelegate, UITableViewDataSource {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
             "sectionHeader") as! MyCustomHeader
         
-        let name = allKeys[section][0].keySignatureName
+        let name = "Key: \(String(describing: allKeys[section][0].keySignatureName!))"
         
         view.title.text = name
         

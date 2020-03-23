@@ -31,7 +31,9 @@ class SecondChordVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        print(secondChordsArray!)
-        nextChordLabel.text = "Next Chord For \(String(describing: chordLabel!))"
+        print(secondChordsArray!)
+        
+        toUpdateHeader()
         
         secondChordCV.register(UINib(nibName: "SecondChordCell", bundle: .main), forCellWithReuseIdentifier: "secondChordCell")
         // Do any additional setup after loading the view.
@@ -45,12 +47,23 @@ class SecondChordVC: UIViewController {
      @IBAction func chordButtonTapped(sender: UIButton) -> Void {
 //        playSound(soundName: sender.currentTitle!)
 //            nextChordsArray = getNextChord(starting: sender.currentTitle!)
+        // To play sound enable this line
 //            playSound(soundName: sender.currentTitle!)
     //        print(nextChordsArray)
         
 
         chordSelectionDelegate?.didTapChord(button: sender.currentTitle!)
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func toUpdateHeader() {
+        
+        if secondChordsArray! == [] {
+            nextChordLabel.text = "No Next Chord to Show"
+        } else {
+        nextChordLabel.text = "Next Chord For \(String(describing: chordLabel!))"
+        }
+        
     }
     
     func playSound(soundName: String) {

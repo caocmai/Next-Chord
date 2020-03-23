@@ -31,14 +31,13 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.definesPresentationContext = true
         
         populateMajorKeyChords()
         populateMinorKeyChords()
         navigationItem.title = "Select a Key"
         navigationController?.navigationBar.prefersLargeTitles = true
+        
     }
-    
     
     func populateMajorKeyChords() {
         

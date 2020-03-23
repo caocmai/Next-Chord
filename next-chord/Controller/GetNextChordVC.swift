@@ -14,6 +14,8 @@ class GetNextChordVC: UIViewController {
     var player : AVAudioPlayer?
     
     var allMajorKeys = [KeySignature]()
+
+    
     var allTotalChords = [String]()
     
     var allOfChords = [String]()
@@ -43,7 +45,6 @@ class GetNextChordVC: UIViewController {
 
         allChordsView.register(UINib(nibName: "NextChordCell", bundle: .main), forCellWithReuseIdentifier: "nextChordcell")
         
-
         createRomanMajorChords()
         getTest()
         getAllMajorProgessiveChords()
@@ -175,7 +176,7 @@ class GetNextChordVC: UIViewController {
             if let safe = chord.chord4 {
                 tempArray.append(safe)
             }
-            
+        
             everyProgessiveChords.append(tempArray)
         }
         
@@ -188,10 +189,19 @@ class GetNextChordVC: UIViewController {
 
         for i in 0..<everyProgessiveChords.count{
 //            print(everyProgessiveChords[i])
+            // Goes forward
             for y in 0..<everyProgessiveChords[i].count - 1 {
-                
                 if everyProgessiveChords[i][y] == starting {
                     nextChordArrayWithDuplicates.append(everyProgessiveChords[i][y+1])
+
+                }
+            }
+            
+            // Goes backwards
+            for y in 1..<everyProgessiveChords[i].count - 1 {
+                if everyProgessiveChords[i][y] == starting {
+                    nextChordArrayWithDuplicates.append(everyProgessiveChords[i][y-1])
+
                 }
             }
         }
@@ -273,6 +283,8 @@ extension GetNextChordVC : UICollectionViewDelegate, UICollectionViewDataSource,
         nextChordLabel = sender.currentTitle!
 //        print(nextChordLabel)
         nextChordsArray = getNextChord(starting: sender.currentTitle!)
+        
+        // TO Play sounds, enable this line
 //        playSound(soundName: sender.currentTitle!)
 //        print(nextChordsArray)
         self.performSegue(withIdentifier: "secondChordVC", sender: nil)
@@ -319,7 +331,7 @@ extension GetNextChordVC: SecondChordSelectionDelegate {
         navigationItem.title = "The Next Chord For \(button)"
         nextChordsArray = getNextChord(starting: button)
         allChordsView.reloadData()
-        print("next chords after button pressed", nextChordsArray)
+//        print("next chords after button pressed", nextChordsArray)
         resetButton.isHidden = false
     }
     
