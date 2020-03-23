@@ -29,22 +29,6 @@ class TableVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    //    func getChords() {
-    //        let newArray = [["I", "IV", "V", "I"], ["I", "vi", "IV", "V"]]
-    //        for i in 0..<newArray.count {
-    //
-    //            var new = theKey!
-    //            new.getProgessiveChords(input1: newArray[0][i], input2: newArray[1][i])
-    //            progessiveChords.append(new)
-    //
-    //            let labelOne = SetLabel(firstLabel: newArray[0][i], secondLabel: newArray[0][i], thirdLabel: newArray[1][i], fourthLabel: newArray[1][i])
-    //            allLabels.append(labelOne)
-    //
-    //        }
-    //
-    //        print(allLabels)
-    //    }
-    
     func updateHeader() {
         
         if theKey != nil {
@@ -146,23 +130,8 @@ class TableVC: UIViewController {
             var new = minorKey!
             new.getProgessiveChords(input1: fourChords[i][0], input2: fourChords[i][1], input3: fourChords[i][2], input4: fourChords[i][3])
             progessiveChords.append(new)
-            
         }
-        
     }
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 extension TableVC: UITableViewDelegate, UITableViewDataSource{

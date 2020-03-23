@@ -30,8 +30,6 @@ class SecondChordVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(secondChordsArray!)
-//        print(secondChordsArray!)
         
         toUpdateHeader()
         
@@ -91,17 +89,6 @@ class SecondChordVC: UIViewController {
             print(error.localizedDescription)
         }
     }
-            
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension SecondChordVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -115,7 +102,7 @@ extension SecondChordVC : UICollectionViewDelegate, UICollectionViewDataSource, 
         cell.secondChordButtonLabel.setTitle(secondChordsArray![indexPath.row], for: .normal)
         cell.secondChordButtonLabel.addTarget(self, action: #selector(chordButtonTapped), for: .touchUpInside)
 
-        cell.backgroundColor = .cyan
+        cell.backgroundColor = #colorLiteral(red: 0.4513868093, green: 0.9930960536, blue: 1, alpha: 1)
         
         return cell
     }

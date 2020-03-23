@@ -54,6 +54,20 @@ class AllChordsVC: UIViewController {
         
         let fMajor = KeySignature(keySignatureName: "F", allChords: ["I":"F", "ii":"Gm", "iii":"Am", "IV":"Bb", "V":"C", "vi":"Dm", "viio":"Edim"])
         
+        
+        let cSharpMinor = KeySignature(keySignatureName: "C#m", allChords: ["i":"C#m", "iio":"D#dim", "III":"E", "iv":"F#m", "v":"G#m", "VI":"A", "VII":"B"])
+        
+        let dMinor = KeySignature(keySignatureName: "Dm", allChords: ["i":"Dm", "iio":"Edim", "III":"F", "iv":"Gm", "v":"Am", "VI":"Bb", "VII":"C"])
+        
+        let dSharpMinor = KeySignature(keySignatureName: "D#m", allChords: ["i":"D#m", "iio":"E#dim", "III":"F#", "iv":"G#m", "v":"A#m", "VI":"B", "VII":"C#"])
+        
+        let eFlatMinor = KeySignature(keySignatureName: "Ebm", allChords: ["i":"Ebm", "iio":"Fdim", "III":"Gb", "iv":"Abm", "v":"Bbm", "VI":"B", "VII":"Db"])
+        
+        
+        allKeys.append([cSharpMinor])
+        allKeys.append([dMinor])
+        allKeys.append([dSharpMinor])
+        allKeys.append([eFlatMinor])
         allKeys.append([cMajor])
         allKeys.append([cSharpMajor])
         allKeys.append([cMinor])

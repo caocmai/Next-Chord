@@ -23,7 +23,7 @@ class GetNextChordVC: UIViewController {
     
     var allProgessiveChords = [[String]]()
     
-    var test = [String]()
+    var allChordsWithoutDuplicates = [String]()
     
     var nextChordsArray : [String] = []
     var nextChordLabel : String = ""
@@ -44,7 +44,7 @@ class GetNextChordVC: UIViewController {
         
         shouldHideResetButton()
         createRomanMajorChords()
-        getTest()
+        getAllChords()
         getAllMajorProgessiveChords()
         getEveryProgessiveChords()
 //        print(nextChordsArray)
@@ -96,26 +96,24 @@ class GetNextChordVC: UIViewController {
     }
     
     
-    func getTest() {
+    func getAllChords() {
         
-        var testArray = [String]()
+        var allChordsWithDuplicates = [String]()
         
-        for stuff in allMajorKeys {
-//            print(stuff.allChords)
-            for thing in stuff.allChords.values {
-                testArray.append(thing)
-                
+        for key in allMajorKeys {
+            for thing in key.allChords.values {
+                allChordsWithDuplicates.append(thing)
+            }
+        }
+        // Remove duplicates
+        for item in allChordsWithDuplicates {
+            if allChordsWithoutDuplicates.contains(item) == false {
+                allChordsWithoutDuplicates.append(item)
             }
         }
         
-        for item in testArray {
-            if test.contains(item) == false {
-                test.append(item)
-            }
-        }
-        
-//        print(test)
     }
+    
     //Ony for Major Keys!
     func createRomanMajorChords() {
         let cMajor = KeySignature(keySignatureName: "C", allChords: ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bdim"])
@@ -189,10 +187,7 @@ class GetNextChordVC: UIViewController {
                 new.getProgessiveChords(input1: fiveChords[i][0], input2: fiveChords[i][1], input3: fiveChords[i][2], input4: fiveChords[i][3], input5: fiveChords[i][4])
                 progessiveChordsForMajorKeys.append(new)
             }
-
         }
-        
-        
     }
     
     func getEveryProgessiveChords() {
@@ -210,7 +205,6 @@ class GetNextChordVC: UIViewController {
             allProgessiveChords.append(tempArray)
         }
         
-//        print(everyProgessiveChords)
     }
     
     func getNextChord(starting: String) -> [String] {
@@ -257,7 +251,7 @@ extension GetNextChordVC : UICollectionViewDelegate, UICollectionViewDataSource,
         if returnedChord != nil {
             return nextChordsArray.count
         } else {
-            return test.count
+            return allChordsWithoutDuplicates.count
         }
     }
     
@@ -266,7 +260,7 @@ extension GetNextChordVC : UICollectionViewDelegate, UICollectionViewDataSource,
             let cell = allChordsView.dequeueReusableCell(withReuseIdentifier: "nextChordcell", for: indexPath) as! NextChordCell
 //            print("the button is not nil")
             cell.layer.cornerRadius = 7
-            cell.backgroundColor = .red
+            cell.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
             cell.chordButtonLabel.setTitle(nextChordsArray[indexPath.row], for: .normal)
             cell.chordButtonLabel.addTarget(self, action: #selector(chordButtonTapped), for: .touchUpInside)
             return cell
@@ -274,8 +268,8 @@ extension GetNextChordVC : UICollectionViewDelegate, UICollectionViewDataSource,
             let cell = allChordsView.dequeueReusableCell(withReuseIdentifier: "nextChordcell", for: indexPath) as! NextChordCell
 //            print("button is nil")
             cell.layer.cornerRadius = 7
-            cell.backgroundColor = .yellow
-            cell.chordButtonLabel.setTitle(test[indexPath.row], for: .normal)
+            cell.backgroundColor = #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 0.7112853168)
+            cell.chordButtonLabel.setTitle(allChordsWithoutDuplicates[indexPath.row], for: .normal)
             cell.chordButtonLabel.addTarget(self, action: #selector(chordButtonTapped), for: .touchUpInside)
             return cell
         }
@@ -361,7 +355,6 @@ extension GetNextChordVC: SecondChordSelectionDelegate {
         navigationItem.title = "The Next Chord For \(button)"
         nextChordsArray = getNextChord(starting: button)
         allChordsView.reloadData()
-//        print("next chords after button pressed", nextChordsArray)
         resetButton.isHidden = false
     }
     

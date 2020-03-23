@@ -10,17 +10,6 @@ import UIKit
 
 class HomeVC: UIViewController {
     
-    // NO longer needed
-    var chords = [["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bo"],
-                  ["I":"C#", "ii":"D#m", "iii":"E#m", "IV":"F#", "V":"G#", "vi":"A#m", "viio":"B#o"],
-                  ["I":"Db", "ii":"Ebm", "iii":"Fm", "IV":"Gb", "V":"Ab", "vi":"Bbm", "viio":"Co"]
-        
-    ]
-    
-    // no longer needed
-    let chordsCMajor : [String:String] = ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bdim"]
-    
-    
     var allMajorKeys = [KeySignature]()
     var allMinorKeys = [KeySignature]()
     
@@ -129,12 +118,8 @@ class HomeVC: UIViewController {
                 newViewController.minorKey = minorkey
                 self.navigationController?.pushViewController(newViewController, animated: true)
             }
-            
-            
         }
-        
     }
-    
 }
 
 extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {

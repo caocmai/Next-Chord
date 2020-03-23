@@ -21,7 +21,6 @@ class MyCustomHeader: UITableViewHeaderFooterView {
         return title
     }()
     
-    let image = UIImageView()
 
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -34,15 +33,14 @@ class MyCustomHeader: UITableViewHeaderFooterView {
     
     func configureContents() {
         contentView.backgroundColor = #colorLiteral(red: 0.7134668231, green: 0.7134668231, blue: 0.7134668231, alpha: 1)
-//        image.translatesAutoresizingMaskIntoConstraints = false
         title.translatesAutoresizingMaskIntoConstraints = false
 
-//        contentView.addSubview(image)
         contentView.addSubview(title)
 
         NSLayoutConstraint.activate([
             title.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            title.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+            title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12)
+//            title.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
     }
 }
