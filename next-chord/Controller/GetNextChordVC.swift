@@ -210,7 +210,7 @@ extension GetNextChordVC : UICollectionViewDelegate, UICollectionViewDataSource,
             let cell = allChordsView.dequeueReusableCell(withReuseIdentifier: "nextChordcell", for: indexPath) as! NextChordCell
             //            print("the button is not nil")
             cell.layer.cornerRadius = 7
-            cell.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+            cell.backgroundColor = #colorLiteral(red: 0.4513868093, green: 0.9930960536, blue: 1, alpha: 1)
             cell.chordButtonLabel.setTitle(nextChordsArray[indexPath.row], for: .normal)
             cell.chordButtonLabel.addTarget(self, action: #selector(chordButtonTapped), for: .touchUpInside)
             return cell
