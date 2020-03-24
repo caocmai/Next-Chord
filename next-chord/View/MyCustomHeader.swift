@@ -17,7 +17,7 @@ class MyCustomHeader: UITableViewHeaderFooterView {
     let title : UILabel = {
         let title = UILabel()
         title.font = UIFont.systemFont(ofSize: 24.0)
-        title.textColor = #colorLiteral(red: 0.1329008341, green: 0.1329008341, blue: 0.1329008341, alpha: 1)
+        title.textColor = #colorLiteral(red: 0.9441635013, green: 0.9385505915, blue: 0.9484778047, alpha: 1)
         return title
     }()
     

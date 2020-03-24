@@ -67,6 +67,7 @@ class TableVC: UIViewController {
                           ["I", "IV", "I", "V"],
                           ["I", "IV", "ii", "V"],
                           ["vi", "ii", "V", "I"],
+                          ["I", "IV", "V", "I"]
         ]
         
         for i in 0..<fourChords.count {

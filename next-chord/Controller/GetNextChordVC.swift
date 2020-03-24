@@ -86,7 +86,7 @@ class GetNextChordVC: UIViewController {
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
-        print("reset")
+//        print("reset")
         returnedChord = nil
         allChordsView.reloadData()
         navigationItem.title = "Find The Next Chord"
@@ -166,6 +166,8 @@ class GetNextChordVC: UIViewController {
                           ["I", "IV", "I", "V"],
                           ["I", "IV", "ii", "V"],
                           ["vi", "ii", "V", "I"],
+                          ["I", "IV", "V", "I"],
+
         ]
 
         for i in 0..<fourChords.count {
