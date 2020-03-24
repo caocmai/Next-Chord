@@ -9,6 +9,7 @@
 import UIKit
 
 class MajorChordCell: UICollectionViewCell {
+    
     @IBOutlet weak var majorChordButtonLabel: UIButton!
     
 }

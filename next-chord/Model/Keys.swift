@@ -41,35 +41,6 @@ struct KeySignature {
             self.chord5 = allChords[e]
         } else {}
     }
-    
-    
-    func getProgessiveChords22 (input1: String?, input2: String?, input3: String?=nil, input4: String?=nil) -> [String] {
-        
-        var array : [String] = []
-        
-        if let a = input1 {
-            array.append(allChords[a]!)
-        }
-        
-        if let b = input2 {
-            array.append(allChords[b]!)
-        }else {
-        }
-        
-        if let c = input3 {
-            array.append(allChords[c]!)
-        }else {
-        }
-        
-        if let d = input4 {
-            array.append(allChords[d]!)
-        }else {
-        }
-        
-        return array
-        
-    }
-    
 }
 
 struct SetLabel {

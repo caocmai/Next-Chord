@@ -11,7 +11,6 @@ import UIKit
 class TableVC: UIViewController {
     
     var player : AVAudioPlayer?
-        
     var theKey : KeySignature?
     var minorKey : KeySignature?
     var progessiveChords = [KeySignature]()
@@ -26,7 +25,6 @@ class TableVC: UIViewController {
         newTableView.dataSource = self
         updateHeader()
         
-        // Do any additional setup after loading the view.
     }
     
     func updateHeader() {
@@ -38,7 +36,6 @@ class TableVC: UIViewController {
             getMinorChords()
             navigationItem.title = (minorKey?.keySignatureName!)! + " (Minor)"
         }
-        
     }
     
     func getMajorChords() {
@@ -93,9 +90,7 @@ class TableVC: UIViewController {
             var new = theKey!
             new.getProgessiveChords(input1: fiveChords[i][0], input2: fiveChords[i][1], input3: fiveChords[i][2], input4: fiveChords[i][3], input5: fiveChords[i][4])
             progessiveChords.append(new)
-            
         }
-        
     }
     
     func getMinorChords() {
@@ -108,14 +103,12 @@ class TableVC: UIViewController {
         ]
         
         for i in 0..<threeChords.count {
-            
             let labelOne = SetLabel(firstLabel: threeChords[i][0], secondLabel: threeChords[i][1], thirdLabel: threeChords[i][2])
             allLabels.append(labelOne)
             
             var new = minorKey!
             new.getProgessiveChords(input1: threeChords[i][0], input2: threeChords[i][1], input3: threeChords[i][2])
             progessiveChords.append(new)
-            
         }
         
         let fourChords = [["i", "VI", "III", "VII"],
@@ -163,16 +156,16 @@ extension TableVC: UITableViewDelegate, UITableViewDataSource{
             cell.backgroundColor = #colorLiteral(red: 0.9019607843, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
         }
     }
-    
-    
 }
 
 extension TableVC: TableViewSound {
     func onTap(playChord: String) {
-        print("\(playChord) is Clicked")
+//        print("\(playChord) is Clicked")
         playSound(soundName: playChord)
     }
     
+    /* Code found on stackoverflow
+     https://stackoverflow.com/questions/32036146/how-to-play-a-sound-using-swift */
     func playSound(soundName: String) {
         //        let url = Bundle.main.url(forResource: soundName, withExtension: "wav")
         //        player = try! AVAudioPlayer(contentsOf: url!)
@@ -198,8 +191,4 @@ extension TableVC: TableViewSound {
             print(error.localizedDescription)
         }
     }
-    
-    
 }
-
-

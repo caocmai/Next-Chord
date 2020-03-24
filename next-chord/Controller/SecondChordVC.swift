@@ -17,39 +17,31 @@ protocol SecondChordSelectionDelegate {
 class SecondChordVC: UIViewController {
     
     var player : AVAudioPlayer?
-
     var secondChordsArray : [String]?
-    
     var chordSelectionDelegate : SecondChordSelectionDelegate?
-    
     var chordLabel : String?
     
     @IBOutlet weak var nextChordLabel: UILabel!
-    
     @IBOutlet weak var secondChordCV: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         toUpdateHeader()
-        
         secondChordCV.register(UINib(nibName: "SecondChordCell", bundle: .main), forCellWithReuseIdentifier: "secondChordCell")
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func dismissViewTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
-
     }
     
-     @IBAction func chordButtonTapped(sender: UIButton) -> Void {
-//        playSound(soundName: sender.currentTitle!)
-//            nextChordsArray = getNextChord(starting: sender.currentTitle!)
-        // To play sound enable this line
-//            playSound(soundName: sender.currentTitle!)
-    //        print(nextChordsArray)
+    @IBAction func chordButtonTapped(sender: UIButton) -> Void {
+        //        playSound(soundName: sender.currentTitle!)
+        //            nextChordsArray = getNextChord(starting: sender.currentTitle!)
         
-
+        // To play sound enable this line
+        //            playSound(soundName: sender.currentTitle!)
+        
         chordSelectionDelegate?.didTapChord(button: sender.currentTitle!)
         self.dismiss(animated: true, completion: nil)
     }
@@ -59,7 +51,7 @@ class SecondChordVC: UIViewController {
         if secondChordsArray! == [] {
             nextChordLabel.text = "No Next Chord to Show"
         } else {
-        nextChordLabel.text = "Next Chord For \(String(describing: chordLabel!))"
+            nextChordLabel.text = "Next Chord For \(String(describing: chordLabel!))"
         }
         
     }
@@ -101,7 +93,7 @@ extension SecondChordVC : UICollectionViewDelegate, UICollectionViewDataSource, 
         cell.layer.cornerRadius = 7
         cell.secondChordButtonLabel.setTitle(secondChordsArray![indexPath.row], for: .normal)
         cell.secondChordButtonLabel.addTarget(self, action: #selector(chordButtonTapped), for: .touchUpInside)
-
+        
         cell.backgroundColor = #colorLiteral(red: 0.4513868093, green: 0.9930960536, blue: 1, alpha: 1)
         
         return cell
@@ -131,8 +123,6 @@ extension SecondChordVC : UICollectionViewDelegate, UICollectionViewDataSource, 
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
     }
-    
-    
 }
 
 
