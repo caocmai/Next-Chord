@@ -477,7 +477,7 @@
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n06-dH-0k1">
                                 <rect key="frame" x="10" y="558" width="355" height="50"/>
-                                <color key="backgroundColor" red="0.95468562840000004" green="0.70514565709999999" blue="0.47838354109999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3h9-p1-edw"/>
                                 </constraints>

@@ -29,10 +29,10 @@ class TableVC: UIViewController {
     func updateHeader() {
         if theKey != nil {
             getMajorChords()
-            navigationItem.title = (theKey?.keySignatureName!)! + " (Major)"
+            navigationItem.title = (theKey?.keySignatureName!)! + " (Major) Progression Pattens"
         } else {
             getMinorChords()
-            navigationItem.title = (minorKey?.keySignatureName!)! + " (Minor)"
+            navigationItem.title = (minorKey?.keySignatureName!)! + " (Minor) Progression Patterns"
         }
     }
     
