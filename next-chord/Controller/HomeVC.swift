@@ -26,7 +26,6 @@ class HomeVC: UIViewController {
     }
     
     func populateMajorKeyChords() {
-        
         let cMajor = KeySignature(keySignatureName: "C", allChords: ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bdim"])
         let cSharpMajor = KeySignature(keySignatureName: "C#", allChords: ["I":"C#", "ii":"D#m", "iii":"Fm", "IV":"F#", "V":"G#", "vi":"A#m", "viio":"B#dim"])
         let dFlatMajor = KeySignature(keySignatureName: "Db", allChords: ["I":"Db", "ii":"Ebm", "iii":"Fm", "IV":"Gb", "V":"Ab", "vi":"Bbm", "viio":"Cdim"])
@@ -42,7 +41,6 @@ class HomeVC: UIViewController {
         allMajorKeys.append(eFlatMajor)
         allMajorKeys.append(eMajor)
         allMajorKeys.append(fMajor)
-        
     }
     
     func populateMinorKeyChords() {
@@ -51,7 +49,6 @@ class HomeVC: UIViewController {
         let dMinor = KeySignature(keySignatureName: "Dm", allChords: ["i":"Dm", "iio":"Edim", "III":"F", "iv":"Gm", "v":"Am", "VI":"Bb", "VII":"C"])
         let dSharpMinor = KeySignature(keySignatureName: "D#m", allChords: ["i":"D#m", "iio":"E#dim", "III":"F#", "iv":"G#m", "v":"A#m", "VI":"B", "VII":"C#"])
         let eFlatMinor = KeySignature(keySignatureName: "Ebm", allChords: ["i":"Ebm", "iio":"Fdim", "III":"Gb", "iv":"Abm", "v":"Bbm", "VI":"B", "VII":"Db"])
-        
         
         allMinorKeys.append(cMinor)
         allMinorKeys.append(cSharpMinor)
@@ -84,7 +81,6 @@ class HomeVC: UIViewController {
     //    }
     
     @IBAction func selectButtonTapped(sender: UIButton) -> Void {
-        
         for majorkey in allMajorKeys {
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "tableScreen") as! TableVC

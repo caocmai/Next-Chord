@@ -56,7 +56,6 @@ class AllChordsVC: UIViewController {
     }
     
     func getAllChords() {
-        
         for key in allKeys.enumerated() {
             for chord in key.element {
                 
@@ -74,7 +73,6 @@ class AllChordsVC: UIViewController {
 
 
 extension AllChordsVC : UITableViewDelegate, UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return allOfChords.count
     }
@@ -93,7 +91,6 @@ extension AllChordsVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
             "sectionHeader") as! MyCustomHeader
         let name = "Key: \(String(describing: allKeys[section][0].keySignatureName!))"

@@ -43,7 +43,6 @@ class TableVC: UIViewController {
         ]
         
         for i in 0..<threeChords.count {
-            
             let labelOne = SetLabel(firstLabel: threeChords[i][0], secondLabel: threeChords[i][1], thirdLabel: threeChords[i][2])
             allLabels.append(labelOne)
             
@@ -65,7 +64,6 @@ class TableVC: UIViewController {
         ]
         
         for i in 0..<fourChords.count {
-            
             let labelOne = SetLabel(firstLabel: fourChords[i][0], secondLabel: fourChords[i][1], thirdLabel: fourChords[i][2], fourthLabel: fourChords[i][3])
             allLabels.append(labelOne)
             
@@ -80,7 +78,6 @@ class TableVC: UIViewController {
         ]
         
         for i in 0..<fiveChords.count {
-            
             let labelOne = SetLabel(firstLabel: fiveChords[i][0], secondLabel: fiveChords[i][1], thirdLabel: fiveChords[i][2], fourthLabel: fiveChords[i][3], fithLabel: fiveChords[i][4])
             allLabels.append(labelOne)
             
@@ -113,7 +110,6 @@ class TableVC: UIViewController {
         ]
         
         for i in 0..<fourChords.count {
-            
             let labelOne = SetLabel(firstLabel: fourChords[i][0], secondLabel: fourChords[i][1], thirdLabel: fourChords[i][2], fourthLabel: fourChords[i][3])
             allLabels.append(labelOne)
             
@@ -180,7 +176,6 @@ extension TableVC: TableViewSound {
              player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
             
             guard let player = player else { return }
-            
             player.play()
             
         } catch let error {

@@ -27,7 +27,6 @@ class GetNextChordVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.title = "Find The Next Chord"
         navigationController?.navigationBar.prefersLargeTitles = true
         allChordsView.register(UINib(nibName: "NextChordCell", bundle: .main), forCellWithReuseIdentifier: "nextChordcell")
@@ -39,7 +38,6 @@ class GetNextChordVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "secondChordVC" {
             let destinationVC = segue.destination as! SecondChordVC
             destinationVC.chordSelectionDelegate = self
@@ -104,10 +102,9 @@ class GetNextChordVC: UIViewController {
     
     //Because this is pattern for major keys
     func getAllMajorProgessiveChords() {
-        
         let threeChords = [["I", "IV", "V"], // C F G
-            ["ii", "V", "I"], // Dm G C
-            ["V", "IV", "I"],
+                           ["ii", "V", "I"], // Dm G C
+                           ["V", "IV", "I"],
         ]
         
         for i in 0..<threeChords.count {
@@ -200,7 +197,6 @@ class GetNextChordVC: UIViewController {
 
 
 extension GetNextChordVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if returnedChord != nil {
             return nextChordsArray.count
@@ -247,7 +243,6 @@ extension GetNextChordVC : UICollectionViewDelegate, UICollectionViewDataSource,
              player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
             
             guard let player = player else { return }
-            
             player.play()
             
         } catch let error {

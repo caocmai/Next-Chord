@@ -46,7 +46,6 @@ class SecondChordVC: UIViewController {
     }
     
     func toUpdateHeader() {
-        
         if secondChordsArray! == [] {
             nextChordLabel.text = "No Next Chord to Show"
         } else {
@@ -73,7 +72,6 @@ class SecondChordVC: UIViewController {
              player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
             
             guard let player = player else { return }
-            
             player.play()
             
         } catch let error {
