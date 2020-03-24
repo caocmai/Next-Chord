@@ -53,7 +53,6 @@ class AllChordsVC: UIViewController {
         allKeys.append([eFlatMajor])
         allKeys.append([eMajor])
         allKeys.append([fMajor])
-        
     }
     
     func getAllChords() {
@@ -124,7 +123,6 @@ extension AllChordsVC : UITableViewDelegate, UITableViewDataSource {
             label.append(chord.value)
             label.append("  ")
         }
-        
         cell.allChordsLabel.text = label
         return cell
     }

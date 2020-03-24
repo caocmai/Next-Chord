@@ -107,9 +107,8 @@ class HomeVC: UIViewController {
     }
 }
 
+
 extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == minorChordCV {
             return allMinorKeys.count

@@ -24,11 +24,9 @@ class TableVC: UIViewController {
         newTableView.delegate = self
         newTableView.dataSource = self
         updateHeader()
-        
     }
     
     func updateHeader() {
-        
         if theKey != nil {
             getMajorChords()
             navigationItem.title = (theKey?.keySignatureName!)! + " (Major)"
@@ -39,7 +37,6 @@ class TableVC: UIViewController {
     }
     
     func getMajorChords() {
-        
         let threeChords = [["I", "IV", "V"],
                            ["ii", "V", "I"],
                            ["V", "IV", "I"],
@@ -94,7 +91,6 @@ class TableVC: UIViewController {
     }
     
     func getMinorChords() {
-        
         let threeChords = [["i", "VI", "VII"],
                            ["i", "iv", "VII"],
                            ["i", "iv", "v"],

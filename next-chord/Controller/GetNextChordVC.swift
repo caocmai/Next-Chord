@@ -50,17 +50,13 @@ class GetNextChordVC: UIViewController {
     
     func shouldHideResetButton() {
         resetButton.layer.cornerRadius = 8
-        
         allChordsView.translatesAutoresizingMaskIntoConstraints = false
-        
         
         if returnedChord == nil {
             resetButton.isHidden = true
             allChordsView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: 20).isActive = true
-            
         } else {
             allChordsView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: 60).isActive = true
-            
         }
     }
     
@@ -69,13 +65,9 @@ class GetNextChordVC: UIViewController {
         allChordsView.reloadData()
         navigationItem.title = "Find The Next Chord"
         resetButton.isHidden = true
-        
-        
     }
     
-    
     func getAllChords() {
-        
         var allChordsWithDuplicates = [String]()
         
         for key in allMajorKeys {
@@ -89,23 +81,16 @@ class GetNextChordVC: UIViewController {
                 allChordsWithoutDuplicates.append(item)
             }
         }
-        
     }
     
-    //Ony for Major Keys!
+    // Currently, ony for Major Keys!
     func createRomanMajorChords() {
         let cMajor = KeySignature(keySignatureName: "C", allChords: ["I":"C", "ii":"Dm", "iii":"Em", "IV":"F", "V":"G", "vi":"Am", "viio":"Bdim"])
-        
         let cSharpMajor = KeySignature(keySignatureName: "C#", allChords: ["I":"C#", "ii":"D#m", "iii":"Fm", "IV":"F#", "V":"G#", "vi":"A#m", "viio":"B#dim"])
-        
         let dFlatMajor = KeySignature(keySignatureName: "Db", allChords: ["I":"Db", "ii":"Ebm", "iii":"Fm", "IV":"Gb", "V":"Ab", "vi":"Bbm", "viio":"Cdim"])
-        
         let dMajor = KeySignature(keySignatureName: "D", allChords: ["I":"D", "ii":"Em", "iii":"F#m", "IV":"G", "V":"A", "vi":"Bm", "viio":"C#dim"])
-        
         let eFlatMajor = KeySignature(keySignatureName: "Eb", allChords: ["I":"Eb", "ii":"Fm", "iii":"Gm", "IV":"Ab", "V":"Bb", "vi":"Cm", "viio":"Ddim"])
-        
         let eMajor = KeySignature(keySignatureName: "E", allChords: ["I":"E", "ii":"F#m", "iii":"G#m", "IV":"A", "V":"B", "vi":"C#m", "viio":"D#dim"])
-        
         let fMajor = KeySignature(keySignatureName: "F", allChords: ["I":"F", "ii":"Gm", "iii":"Am", "IV":"Bb", "V":"C", "vi":"Dm", "viio":"Edim"])
         
         allMajorKeys.append(cMajor)
@@ -115,8 +100,6 @@ class GetNextChordVC: UIViewController {
         allMajorKeys.append(eFlatMajor)
         allMajorKeys.append(eMajor)
         allMajorKeys.append(fMajor)
-        
-        
     }
     
     //Because this is pattern for major keys
@@ -133,7 +116,6 @@ class GetNextChordVC: UIViewController {
                 new.getProgessiveChords(input1: threeChords[i][0], input2: threeChords[i][1], input3: threeChords[i][2])
                 progessiveChordsForMajorKeys.append(new)
             }
-            
         }
         
         let fourChords = [["I", "vi", "IV", "V"],
@@ -171,7 +153,6 @@ class GetNextChordVC: UIViewController {
     
     func getEveryProgessiveChords() {
         for chord in progessiveChordsForMajorKeys {
-            
             var tempArray = [String]()
             
             tempArray.append(chord.chord1!)
@@ -183,14 +164,11 @@ class GetNextChordVC: UIViewController {
             if let safeChord5 = chord.chord5 {
                 tempArray.append(safeChord5)
             }
-            
             allProgessiveChords.append(tempArray)
         }
-        
     }
     
     func getNextChord(starting: String) -> [String] {
-        
         var nextChordArrayWithDuplicates = [String]()
         
         for i in 0..<allProgessiveChords.count{
@@ -199,7 +177,6 @@ class GetNextChordVC: UIViewController {
             for y in 0..<allProgessiveChords[i].count - 1 {
                 if allProgessiveChords[i][y] == starting {
                     nextChordArrayWithDuplicates.append(allProgessiveChords[i][y+1])
-                    
                 }
             }
             
@@ -207,7 +184,6 @@ class GetNextChordVC: UIViewController {
             for y in 1..<allProgessiveChords[i].count {
                 if allProgessiveChords[i][y] == starting {
                     nextChordArrayWithDuplicates.append(allProgessiveChords[i][y-1])
-                    
                 }
             }
         }

@@ -26,7 +26,6 @@ class SecondChordVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         toUpdateHeader()
         secondChordCV.register(UINib(nibName: "SecondChordCell", bundle: .main), forCellWithReuseIdentifier: "secondChordCell")
     }
@@ -82,6 +81,7 @@ class SecondChordVC: UIViewController {
         }
     }
 }
+
 
 extension SecondChordVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
