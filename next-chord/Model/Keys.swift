@@ -27,7 +27,6 @@ struct KeySignature {
     var allChords = [String:String]()
     
     mutating func getProgessiveChords(input1: String, input2: String, input3: String, input4: String?=nil, input5: String?=nil) {
-        
         self.chord1 = allChords[input1]
         self.chord2 = allChords[input2]
         self.chord3 = allChords[input3]
