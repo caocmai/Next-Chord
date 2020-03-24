@@ -58,7 +58,6 @@ class AllChordsVC: UIViewController {
     func getAllChords() {
         for key in allKeys.enumerated() {
             for chord in key.element {
-                
                 var tempArray : [String] = []
                 let value = chord.allChords.values
                 
