@@ -21,7 +21,6 @@ class SecondChordVC: UIViewController {
     var chordLabel : String?
     
     var chordSelectionDelegate : SecondChordSelectionDelegate?
-
     
     @IBOutlet weak var nextChordLabel: UILabel!
     @IBOutlet weak var secondChordCV: UICollectionView!

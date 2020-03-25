@@ -129,7 +129,6 @@ class GetNextChordVC: UIViewController {
                           ["I", "I", "IV", "V"],
                           ["I", "IV", "I", "V"],
                           ["I", "IV", "V", "IV"]
-                          
         ]
         
         for i in 0..<fourChords.count {

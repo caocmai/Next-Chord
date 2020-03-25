@@ -16,7 +16,6 @@ class HomeVC: UIViewController {
     @IBOutlet weak var majorChordCV: UICollectionView!
     @IBOutlet weak var minorChordCV: UICollectionView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         populateMajorKeyChords()

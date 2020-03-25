@@ -50,7 +50,6 @@ class TableVC: UIViewController {
             var new = theKey!
             new.getProgessiveChords(input1: threeChords[i][0], input2: threeChords[i][1], input3: threeChords[i][2])
             progessiveChords.append(new)
-            
         }
         
         let fourChords = [["I", "vi", "IV", "V"],
@@ -75,7 +74,6 @@ class TableVC: UIViewController {
             var new = theKey!
             new.getProgessiveChords(input1: fourChords[i][0], input2: fourChords[i][1], input3: fourChords[i][2], input4: fourChords[i][3])
             progessiveChords.append(new)
-            
         }
         
         let fiveChords = [["I", "V", "vi", "iii", "IV"],
