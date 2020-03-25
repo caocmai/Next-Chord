@@ -64,7 +64,6 @@ class AllChordsVC: UIViewController {
                 tempArray.append(contentsOf: value) // This adds all the values randomly to tempArray
                 allOfChords.append(tempArray)
                 tempArray = []
-                
             }
         }
     }

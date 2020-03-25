@@ -39,7 +39,7 @@ class MyCustomHeader: UITableViewHeaderFooterView {
 
         NSLayoutConstraint.activate([
             title.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12)
+            title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20)
 //            title.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
     }

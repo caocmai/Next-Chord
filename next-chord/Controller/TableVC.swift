@@ -40,6 +40,7 @@ class TableVC: UIViewController {
         let threeChords = [["I", "IV", "V"],
                            ["ii", "V", "I"],
                            ["V", "IV", "I"],
+                           ["IV", "V", "I"]
         ]
         
         for i in 0..<threeChords.count {
@@ -60,7 +61,11 @@ class TableVC: UIViewController {
                           ["I", "IV", "I", "V"],
                           ["I", "IV", "ii", "V"],
                           ["vi", "ii", "V", "I"],
-                          ["I", "IV", "V", "I"]
+                          ["I", "IV", "V", "I"],
+                          ["I", "IV", "V", "V"],
+                          ["I", "I", "IV", "V"],
+                          ["I", "IV", "I", "V"],
+                          ["I", "IV", "V", "IV"]
         ]
         
         for i in 0..<fourChords.count {
@@ -120,6 +125,7 @@ class TableVC: UIViewController {
     }
 }
 
+
 extension TableVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return progessiveChords.count
@@ -149,6 +155,7 @@ extension TableVC: UITableViewDelegate, UITableViewDataSource{
         }
     }
 }
+
 
 extension TableVC: TableViewSound {
     func onTap(playChord: String) {

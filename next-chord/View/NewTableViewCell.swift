@@ -24,6 +24,7 @@ class NewTableViewCell: UITableViewCell {
     @IBOutlet weak var chordButtonLabel3: UIButton!
     @IBOutlet weak var chordButtonLabel4: UIButton!
     @IBOutlet weak var chordButtonLabel5: UIButton!
+    
     var cellDelegate: TableViewSound?
     
     override func awakeFromNib() {

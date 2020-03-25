@@ -18,8 +18,10 @@ class SecondChordVC: UIViewController {
     
     var player : AVAudioPlayer?
     var secondChordsArray : [String]?
-    var chordSelectionDelegate : SecondChordSelectionDelegate?
     var chordLabel : String?
+    
+    var chordSelectionDelegate : SecondChordSelectionDelegate?
+
     
     @IBOutlet weak var nextChordLabel: UILabel!
     @IBOutlet weak var secondChordCV: UICollectionView!

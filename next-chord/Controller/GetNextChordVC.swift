@@ -69,8 +69,8 @@ class GetNextChordVC: UIViewController {
         var allChordsWithDuplicates = [String]()
         
         for key in allMajorKeys {
-            for thing in key.allChords.values {
-                allChordsWithDuplicates.append(thing)
+            for value in key.allChords.values {
+                allChordsWithDuplicates.append(value)
             }
         }
         // Remove duplicates
@@ -102,9 +102,10 @@ class GetNextChordVC: UIViewController {
     
     //Because this is pattern for major keys
     func getAllMajorProgessiveChords() {
-        let threeChords = [["I", "IV", "V"], // C F G
-                           ["ii", "V", "I"], // Dm G C
+        let threeChords = [["I", "IV", "V"],
+                           ["ii", "V", "I"],
                            ["V", "IV", "I"],
+                           ["IV", "V", "I"]
         ]
         
         for i in 0..<threeChords.count {
@@ -124,6 +125,10 @@ class GetNextChordVC: UIViewController {
                           ["I", "IV", "ii", "V"],
                           ["vi", "ii", "V", "I"],
                           ["I", "IV", "V", "I"],
+                          ["I", "IV", "V", "V"],
+                          ["I", "I", "IV", "V"],
+                          ["I", "IV", "I", "V"],
+                          ["I", "IV", "V", "IV"]
                           
         ]
         
@@ -172,14 +177,14 @@ class GetNextChordVC: UIViewController {
             //            print(everyProgessiveChords[i])
             // Goes forward
             for y in 0..<allProgessiveChords[i].count - 1 {
-                if allProgessiveChords[i][y] == starting {
+                if allProgessiveChords[i][y] == starting && allProgessiveChords[i][y+1] != starting{
                     nextChordArrayWithDuplicates.append(allProgessiveChords[i][y+1])
                 }
             }
             
             // Goes backwards
             for y in 1..<allProgessiveChords[i].count {
-                if allProgessiveChords[i][y] == starting {
+                if allProgessiveChords[i][y] == starting && allProgessiveChords[i][y-1] != starting{
                     nextChordArrayWithDuplicates.append(allProgessiveChords[i][y-1])
                 }
             }
@@ -291,7 +296,7 @@ extension GetNextChordVC: SecondChordSelectionDelegate {
     func didTapChord(button: String) {
         //        print("button clicked", button)
         returnedChord = button
-        navigationItem.title = "The Next Chord For \(button)"
+        navigationItem.title = "Next Chord For \(button)"
         nextChordsArray = getNextChord(starting: button)
         allChordsView.reloadData()
         resetButton.isHidden = false
