@@ -35,7 +35,7 @@ Is it known that chord progression works best when moving sequentially forward. 
 
 Also, please note that the next chord functionality does not take key signatures into account meaning the suggested next chords may be of different key and so may sound particularly harsh. These are intentionally implemented because part of the fun of this app is discovering obscure chord patterns that's not completely random but at the same time not tied to chord progression patterns or key signatures too tightly.
 
-## Developer Note
+## Developer's Note
 Currently (as of March 2020), the project runs successfully without any error. However, this is a work in progress and not all key signatures/chords are yet added to the project. Most chords don't yet have sounds because they haven't been added. Only key signatures of C major and C minor have chord sounds.
 
 I will try to add more key signatures and chord sounds when time permits.
