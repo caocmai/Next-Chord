@@ -12,12 +12,12 @@ Next Chord is an iOS app intended for musicians to find the next suggested chord
 * New Chord Screen - displays the suggested next chord(s) based on the selected chord as UICollectionView
 
 ### Basic Usage
-To get common chord progressions tap on a key signature on the home page and a list of chord patterns will appear.
+To get common chord progressions tap on a key signature from the home page and a list of chord patterns will appear.
 Chord progression patterns need to be played sequentially, in this case from left to right.
 
-To get the next suggested chords tap on the Next Chord tab bar icon and select the chord you would like to get all the suggested chords. To get the following suggested chords after that, simply tap a chord in the suggested chord view. 
+To get the next suggested chords tap on the Next Chord tab bar icon and select the chord you would like to get all the next suggested chords. To get the following suggested chords after that, simply tap a chord in the suggested chord view. 
 
-### Basic App Walk-through
+### App Walk-through
 ![](nextChordProjectWalk.gif)
 
 ### Run Locally
