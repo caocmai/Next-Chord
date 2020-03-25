@@ -9,7 +9,7 @@ Next Chord is an iOS app intended for musicians to find the next suggested chord
 * Chord Progression Pattern Screen - Displays chord progression patterns of key signature as UITableview
 * Sound Playback - Sounds of chords can be heard when tapped in the Chord Progression Pattern Screen
 * Reference Screen - List of chords and key signatures as UITableview
-* New Chord Screen - Displays the next chord based on the selected chord as UICollectionView
+* New Chord Screen - Displays the suggested next chord(s) based on the selected chord as UICollectionView
 
 ### Basic App Walk-through
 ![](nextChordProjectWalk.gif)
