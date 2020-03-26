@@ -50,9 +50,8 @@ class SecondChordVC: UIViewController {
         if secondChordsArray! == [] {
             nextChordLabel.text = "No Next Chord to Show"
         } else {
-            nextChordLabel.text = "Next Chord For \(String(describing: chordLabel!))"
+            nextChordLabel.text = "Suggested Next Chord(s) For \(String(describing: chordLabel!))"
         }
-        
     }
     
     func playSound(soundName: String) {

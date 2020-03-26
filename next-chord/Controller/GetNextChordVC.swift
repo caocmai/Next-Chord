@@ -62,6 +62,7 @@ class GetNextChordVC: UIViewController {
         returnedChord = nil
         allChordsView.reloadData()
         navigationItem.title = "Find The Next Chord"
+        navigationController?.navigationBar.prefersLargeTitles = true
         resetButton.isHidden = true
     }
     
@@ -295,7 +296,8 @@ extension GetNextChordVC: SecondChordSelectionDelegate {
     func didTapChord(button: String) {
         //        print("button clicked", button)
         returnedChord = button
-        navigationItem.title = "Next Chord For \(button)"
+        navigationItem.title = "Suggested Next Chord(s) For \(button)"
+        navigationController?.navigationBar.prefersLargeTitles = false
         nextChordsArray = getNextChord(starting: button)
         allChordsView.reloadData()
         resetButton.isHidden = false
