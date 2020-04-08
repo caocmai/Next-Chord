@@ -2,7 +2,7 @@
 An iOS app for musicians to find the next chord to aid in music writing/improvising or just for fun.
 
 ## Description
-Next Chord is an iOS app intended for musicians to find the next suggested chord based on the parent chord. Suggested chords are based on common conventional chord progression patterns used in music. More information on chord progression: https://en.wikipedia.org/wiki/Chord_progression
+Next Chord is an iOS app intended for musicians to find the next suggested chord based on the parent chord. Suggested chords are based on common conventional chord progression patterns used in music. More information on chord progression: [Wikipedia](https://en.wikipedia.org/wiki/Chord_progression)
 
 ### Features 
 * Home Screen - displays major and minor key signatures as UICollectionview
