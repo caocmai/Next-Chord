@@ -2,7 +2,7 @@
 An iOS app for musicians to find the next chord to aid in music writing/improvising or just for fun.
 
 ## Description
-Next Chord is an iOS app intended for musicians to find the next suggested chord based on the parent chord. Suggested chords are based on common conventional chord progression patterns used in music. More information on chord progression: https://en.wikipedia.org/wiki/Chord_progression
+Next Chord is an iOS app intended for musicians to find the next suggested chord based on the parent chord. Suggested chords are based on common conventional chord progression patterns used in music. More information on chord progression: [Wikipedia](https://en.wikipedia.org/wiki/Chord_progression)
 
 ### Features 
 * Home Screen - displays major and minor key signatures as UICollectionview
@@ -37,9 +37,9 @@ https://www.makeschool.com/portfolio/Cao-Mai
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Application Note
-Is it known that chord progression works best when moving sequentially forward. In this app, however, the next chord functionality not only suggests chords that go sequentially forward but backwards too. As such, there are instances where suggested chords will not sound too pleasant. This method can be removed to exclusively moving sequentially forward but then populated suggested next chords would not be as broad and I feel they are there as only suggested chords and it's up to you to determine whether you like the chord or not. I hope to eventually create a button that lets the user select their preferences. Also, note that the next chord functionality does not take key signatures into account, meaning the suggested next chords may be of different key and so may sound particularly harsh. 
+Is it known that chord progression works best when moving sequentially forward. In this app, however, the next chord functionality not only suggests chords that go sequentially forward but backwards too. As such, there are instances where suggested chords will not sound too pleasant. This method can be removed to exclusively moving sequentially forward but then populated suggested next chords would not be as broad and I feel they are there as only suggested chords and it's up to you to determine whether you like the chord or not. Also, note that the next chord functionality does not take key signatures into account, meaning the suggested next chords may be of different key and so may sound particularly harsh. 
 
-These quirks are intentionally implemented/kept because part of the fun of this app is discovering obscure chord patterns that's not completely random but at the same time not tied to chord progression patterns or key signatures too tightly.
+These quirks were intentionally implemented/kept because part of the fun of this app is discovering new chord patterns that's not completely random but at the same time not tied to chord progression patterns or key signatures too tightly.
 
 ## Developer's Note
 Currently (as of March 2020), the project runs successfully without any error. However, this is a work in progress and not all key signatures/chords are yet added to the project. Most chords don't yet have sounds because they haven't been added. Only key signatures of C major and C minor have chord sounds.
