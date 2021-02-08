@@ -45,3 +45,6 @@ These quirks were intentionally implemented/kept because part of the fun of this
 Currently (as of March 2020), the project runs successfully without any error. However, this is a work in progress and not all key signatures/chords are yet added to the project. Most chords don't yet have sounds because they haven't been added. Only key signatures of C major and C minor have chord sounds.
 
 I will try to add more key signatures and chord sounds when time permits. 
+
+## Privacy Notice
+* [Link](https://caocmai.github.io/next-chord/)
